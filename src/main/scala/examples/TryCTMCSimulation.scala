@@ -3,8 +3,8 @@ package examples
 object TryCTMCSimulation extends App {
 
   import java.util.Random
-  import pc.modelling.{CTMC, CTMCAnalysis}
-  import pc.modelling.CTMCAnalysis._
+  import pc.modelling.{CTMC, CTMCSimulation}
+  import pc.modelling.CTMCSimulation._
 
   object State extends Enumeration {
     val idle,send,done,fail = Value
@@ -20,8 +20,9 @@ object TryCTMCSimulation extends App {
     (done,1.0,done)
   )
 
-  val channelAnalysis = CTMCAnalysis(channel)
+  val channelAnalysis = CTMCSimulation(channel)
   timed{
-    println(channelAnalysis.newSimulationTrace(idle, new Random).take(10).toList.mkString("\n"))
+    println(channelAnalysis.newSimulationTrace(idle, new Random).take(10)
+                                                                .toList.mkString("\n"))
   }
 }

@@ -25,7 +25,7 @@ trait System[A] extends CoreSystem[A] {
            next <- next(path.last)) yield (path :+ next)
   }
 
-  // might loop, use with care!
+  // an infinite stream: might loop, use with care!
   def completePaths(a: A): Stream[List[A]] =
     Stream.iterate(1)(_+1) flatMap (paths(a,_)) filter (complete(_))
 }
@@ -33,9 +33,10 @@ trait System[A] extends CoreSystem[A] {
 object System { // Our factory of Systems
 
   // The most general case, an intensional one
-  def ofFunction[A](f: PartialFunction[A,Set[A]]): System[A] = new CoreSystem[A] with System[A] {
-    override def next(a: A) = f.applyOrElse(a,(x: A)=>Set[A]())
-  }
+  def ofFunction[A](f: PartialFunction[A,Set[A]]): System[A] =
+    new CoreSystem[A] with System[A] {
+      override def next(a: A) = f.applyOrElse(a,(x: A)=>Set[A]())
+    }
 
   // Extensional specification
   def ofRelation[A](r: Set[(A,A)]): System[A] = ofFunction{
