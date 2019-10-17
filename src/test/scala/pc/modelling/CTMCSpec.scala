@@ -20,9 +20,9 @@ class CTMCSpec extends FlatSpec{
       (done, 1.0, done)
     )
 
-    assert(channel.nextWithRate(idle) == Set(1.0->send))
-    assert(channel.nextWithRate(send) == Set(100000->send, 200000->done, 100000->fail))
-    assert(channel.nextWithRate(fail) == Set(100000->idle))
-    assert(channel.nextWithRate(done) == Set(1->done))
+    assert(channel.transitions(idle) == Set(1.0->send))
+    assert(channel.transitions(send) == Set(100000->send, 200000->done, 100000->fail))
+    assert(channel.transitions(fail) == Set(100000->idle))
+    assert(channel.transitions(done) == Set(1->done))
   }
 }

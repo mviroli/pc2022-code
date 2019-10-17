@@ -1,136 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae36cbfc-395f-4b4f-81fe-ac6580f8f0a6" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/project/project/target/" />
-    <ignored path="$PROJECT_DIR$/project/target/" />
-    <ignored path="/media/dati/work/Lessons/2018-2019/pc/code-repo/target/" />
-    <ignored path="/media/dati/work/Lessons/2018-2019/pc/code-repo/project/project/target/" />
-    <ignored path="/media/dati/work/Lessons/2018-2019/pc/code-repo/project/target/" />
-    <ignored path="/media/dati/work/Lessons/2018-2019/pc/formalsystems/target/" />
-    <ignored path="/media/dati/work/Lessons/2018-2019/pc/formalsystems/project/project/target/" />
-    <ignored path="/media/dati/work/Lessons/2018-2019/pc/formalsystems/project/target/" />
+    <list default="true" id="ae36cbfc-395f-4b4f-81fe-ac6580f8f0a6" name="Default Changelist" comment="lesson 02 ready">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/TwoWaysMDP.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/pc/utils/Stochastics.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/pc/rl/MDPSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/pc-formalsystems.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/project-root-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/examples/TryCTMC.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TryCTMC.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/examples/TryCTMCExperiment.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TryCTMCExperiment.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/examples/TryCTMCSimulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TryCTMCSimulation.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/examples/TryDAP.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TryDAP.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/examples/TryMSet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TryMSet.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/examples/TryPN.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TryPN.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/examples/TrySPN.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TrySPN.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/examples/TrySystem.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TrySystem.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMC.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMC.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCAnalysis.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCAnalysis.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCSimulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCSimulation.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/DAP.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/DAP.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/PetriNet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/PetriNet.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/SPN.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/SPN.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/System.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/System.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/CTMCAnalysisSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/CTMCAnalysisSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/CTMCSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/CTMCSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/MSetCheck.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/MSetCheck.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/MSetSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/MSetSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/PNSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/PNSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/SystemSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/SystemSpec.scala" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1924617554">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="scala" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Scala" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="scala" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Scala" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
-    </session>
-    <session id="-43463566">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view />
+      </state>
+    </system>
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
       <list>
-        <option value="/media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/MSet.scala" />
-        <option value="/media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/PetriNet.scala" />
-        <option value="/media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/SPN.scala" />
+        <option value="Scala Object" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="4" />
-    <option name="y" value="35" />
-    <option name="width" value="1908" />
-    <option name="height" value="533" />
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="02-lesson" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="formalsystems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="formalsystems" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="formalsystems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="formalsystems" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="formalsystems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="formalsystems" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="formalsystems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="formalsystems" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="formalsystems" type="b2602c69:ProjectViewProjectNode" />
-              <item name="formalsystems" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
+  <component name="ProjectId" id="1REpBzwj9kRadKsk4mzYzLvecxp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="pc.utils" />
+      <recent name="pc" />
+      <recent name="pc.modelling" />
+      <recent name="" />
+      <recent name="pc.modelling.rl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="pc.modelling" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -144,31 +105,146 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="ScalaTests in 'scala'" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="ScalaTest.ScalaTests in 'rl'">
+    <configuration name="TryRL" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="rl.TryRL" />
       <module name="formalsystems" />
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="showProgressMessages" value="true" />
-      <setting name="useSbt" value="false" />
-      <setting name="useUiWithSbt" value="false" />
-      <envs />
-      <setting name="testKind" value="All in package" />
-      <setting name="package" value="" />
-      <buffered bufClass="CTMCAnalysisSpec" />
-      <buffered bufClass="PNSpec" />
-      <buffered bufClass="pc.modelling.CTMCSpec" />
-      <buffered bufClass="pc.modelling.MSetSpec" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="QFunctionSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="formalsystems" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="rl.QFunctionSpec" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScalaTests in 'modelling'" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="formalsystems" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testClassPath" value="" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScalaTests in 'rl'" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="formalsystems" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="classBuf">
+        <list>
+          <option value="pc.rl.QFunctionSpec" />
+          <option value="pc.rl.MDPSpec" />
+          <option value="pc.rl.RLSpec" />
+          <option value="pc.rl.RLSpec" />
+          <option value="pc.rl.MDPSpec" />
+          <option value="pc.rl.QFunctionSpec" />
+        </list>
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testPackagePath" value="pc.rl" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScalaTests in 'scala'" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="formalsystems" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="testKind" value="Class" />
+      <option name="classBuf">
+        <list>
+          <option value="pc.utils.StochasticSpec" />
+          <option value="pc.utils.StochasticSpec" />
+          <option value="pc.modelling.PNSpec" />
+          <option value="pc.modelling.CTMCSpec" />
+          <option value="pc.modelling.MSetSpec" />
+          <option value="pc.modelling.SystemSpec" />
+          <option value="pc.modelling.CTMCAnalysisSpec" />
+          <option value="pc.modelling.CTMCSpec" />
+          <option value="pc.modelling.SystemSpec" />
+          <option value="pc.modelling.PNSpec" />
+          <option value="pc.modelling.CTMCAnalysisSpec" />
+          <option value="pc.modelling.MSetSpec" />
+          <option value="pc.rl.QFunctionSpec" />
+          <option value="pc.rl.MDPSpec" />
+          <option value="pc.rl.RLSpec" />
+          <option value="pc.rl.RLSpec" />
+          <option value="pc.rl.MDPSpec" />
+          <option value="pc.rl.QFunctionSpec" />
+        </list>
+      </option>
+      <option name="envs">
+        <map />
+      </option>
+      <option name="javaOptions" value="" />
+      <option name="jrePath" />
+      <option name="searchTest" value="Across module dependencies" />
+      <option name="showProgressMessages" value="true" />
+      <option name="testArgs" value="" />
+      <option name="testPackagePath" value="" />
+      <option name="useSbt" value="false" />
+      <option name="useUiWithSbt" value="false" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.TryRL" />
+      <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
+      <item itemvalue="ScalaTest.QFunctionSpec" />
+      <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
+      <item itemvalue="ScalaTest.ScalaTests in 'modelling'" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
         <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
+        <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
+        <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
+        <item itemvalue="ScalaTest.ScalaTests in 'modelling'" />
       </list>
     </recent_temporary>
   </component>
@@ -185,12 +261,12 @@
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="root [file:/media/dati/work/Lessons/2018-2019/pc/formalsystems/]" />
-                <option name="path" value="/media/dati/work/Lessons/2018-2019/pc/formalsystems" />
+                <option name="name" value="root [file:/media/dati/work/Lessons/2019-2020/pc/pc2019-code/]" />
+                <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value="root-build [file:/media/dati/work/Lessons/2018-2019/pc/formalsystems/]" />
-                <option name="path" value="/media/dati/work/Lessons/2018-2019/pc/formalsystems/project" />
+                <option name="name" value="formalsystems-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
               </ExternalProjectPojo>
             </list>
           </value>
@@ -199,16 +275,15 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4523498645000" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="1939608764" />
-        <entry key="$PROJECT_DIR$/project/build.properties" value="924338670" />
+        <entry key="$PROJECT_DIR$" value="4707725321850" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="2086764656" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="1085431145" />
         <entry key="$PROJECT_DIR$/project/plugins.sbt" value="0" />
       </map>
     </option>
     <option name="projectSyncType">
       <map>
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
-        <entry key="/media/dati/software/aguzzi-scafi" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../../software/aguzzi-scafi" value="PREVIEW" />
       </map>
     </option>
   </component>
@@ -225,55 +300,51 @@
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="ScalaTests_in_'scala' - 2018.11.02 at 15h 43m 49s.xml">
-      <configuration name="ScalaTests in 'scala'" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="HEAD..origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="32" width="1920" height="1010" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2524013" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295583" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Build" order="11" weight="0.3295583" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3295583" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Gradle" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="sbt" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-    </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/test/scala/MSetCheck.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/MSet.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/System.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/PetriNet.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/test/scala/PNSpec.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/test/scala/MSetSpec.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/test/scala/CTMCAnalysisSpec.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/test/scala/CTMCSpec.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/SPN.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/CTMC.scala" />
-    <entry file="file:///media/dati/work/Lessons/2018-2019/pc/code-repo/src/main/scala/pc/modelling/CTMCAnalysis.scala" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lesson 02 ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson 02 ready" />
   </component>
   <component name="masterDetails">
     <states>

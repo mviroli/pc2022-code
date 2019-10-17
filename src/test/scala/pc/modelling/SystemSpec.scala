@@ -1,5 +1,6 @@
+package pc.modelling
+
 import org.scalatest.FlatSpec
-import pc.modelling.System
 
 class SystemSpec extends FlatSpec{
   "A Channel" should "properly generate next states and paths" in {

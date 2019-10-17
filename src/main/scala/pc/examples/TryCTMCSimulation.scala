@@ -1,4 +1,4 @@
-package examples
+package pc.examples
 
 object TryCTMCSimulation extends App {
 

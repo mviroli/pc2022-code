@@ -1,8 +1,8 @@
 package pc.modelling
 
-import org.scalacheck.{Arbitrary, Gen, Prop, Properties}
-import org.scalacheck.Prop.{BooleanOperators, exists, forAll}
-import Arbitrary.arbitrary
+import org.scalacheck.Arbitrary.arbitrary
+import org.scalacheck.Prop.forAll
+import org.scalacheck.{Arbitrary, Properties}
 
 object MSetCheck extends Properties("MSet") {
 

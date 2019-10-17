@@ -2,28 +2,29 @@ package pc.modelling
 
 import scala.util.Random
 
-trait CoreCTMC[A] {
-  def nextWithRate(a: A): Set[(Double,A)]
+trait CoreCTMC[S] {
+  // rate + state
+  def transitions(a: S): Set[(Double,S)]
 }
 
-trait CTMC[A] extends CoreCTMC[A] with System[A] {
+trait CTMC[S] extends CoreCTMC[S] with System[S] {
 
-  def next(a: A): Set[A] = nextWithRate(a) map (_._2)
+  def next(s: S): Set[S] = transitions(s) map (_._2)
 
-  def nextWithRate(a: A): Set[(Double,A)]
+  def transitions(s: S): Set[(Double,S)]
 
 }
 
 object CTMC {
 
-  def ofFunction[A](f: PartialFunction[A,Set[(Double,A)]]): CTMC[A] =
-    new CoreCTMC[A] with CTMC[A]{
-      override def nextWithRate(a: A) = f.applyOrElse(a,(x: A)=>Set[(Double,A)]())
+  def ofFunction[S](f: PartialFunction[S,Set[(Double,S)]]): CTMC[S] =
+    new CoreCTMC[S] with CTMC[S]{
+      override def transitions(s: S) = f.applyOrElse(s, (x: S)=>Set[(Double,S)]())
     }
 
-  def ofRelation[A](r: Set[(A,Double,A)]): CTMC[A] = ofFunction{
-    case a => r filter {_._1 == a} map {t=>(t._2,t._3)}
+  def ofRelation[S](rel: Set[(S,Double,S)]): CTMC[S] = ofFunction{
+    case s => rel filter {_._1 == s} map { t=>(t._2,t._3)}
   }
 
-  def ofTransitions[A](r: (A,Double,A)*): CTMC[A] = ofRelation(r.toSet)
+  def ofTransitions[S](rel: (S,Double,S)*): CTMC[S] = ofRelation(rel.toSet)
 }

@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="/media/dati/work/Lessons/2018-2019/pc/formalsystems" />
-            <option value="/media/dati/work/Lessons/2018-2019/pc/formalsystems/project" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/project" />
           </set>
         </option>
         <option name="sbtVersion" value="0.13.16" />

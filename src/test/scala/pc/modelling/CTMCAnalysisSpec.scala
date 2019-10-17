@@ -1,9 +1,9 @@
+package pc.modelling
+
 import java.util.Random
 
-import examples.TryCTMCSimulation.State.Value
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers._
-import pc.modelling.{CTMC, CTMCAnalysis}
 
 class CTMCAnalysisSpec extends FlatSpec{
   "CTMC analysis on channel" should "give right probability" in {

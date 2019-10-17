@@ -1,7 +1,6 @@
-import examples.TryPN.place.Value
+package pc.modelling
+
 import org.scalatest.FlatSpec
-import pc.modelling.PetriNet.toSystem
-import pc.modelling.{MSet, PetriNet}
 
 class PNSpec extends FlatSpec{
   "PN for mutual exclusion" should "properly generate 7-length paths" in {
@@ -10,9 +9,8 @@ class PNSpec extends FlatSpec{
       val n,t,c = Value
     }
     type Place = place.Value
-    import place._
-    import MSet._
     import PetriNet._
+    import place._
 
     val pn = PetriNet[Place](
       MSet(n) ~~> MSet(t),

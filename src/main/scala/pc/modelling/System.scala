@@ -1,48 +1,48 @@
 package pc.modelling
 
-// Basically the definition of a Rewrite System
-trait CoreSystem[A] {
+// Basically the definition of s Rewrite System
+trait CoreSystem[S] {
 
-  def next(a: A): Set[A]
+  def next(a: S): Set[S]
 }
 
 // Basic analysis helpers
-trait System[A] extends CoreSystem[A] {
+trait System[S] extends CoreSystem[S] {
 
-  def normalForm(a: A): Boolean =
-    next(a).isEmpty
+  def normalForm(s: S): Boolean =
+    next(s).isEmpty
 
-  def complete(p: List[A]): Boolean =
+  def complete(p: List[S]): Boolean =
     normalForm(p.last)
 
-  def paths(a: A, depth: Int): Stream[List[A]] = {
+  def paths(s: S, depth: Int): Stream[List[S]] = {
     if (depth == 0)
       Stream()
-    else if (depth == 1 || normalForm(a))
-      Stream(List(a))
+    else if (depth == 1 || normalForm(s))
+      Stream(List(s))
     else
-      for (path <- paths(a, depth - 1);
+      for (path <- paths(s, depth - 1);
            next <- next(path.last)) yield (path :+ next)
   }
 
   // an infinite stream: might loop, use with care!
-  def completePaths(a: A): Stream[List[A]] =
-    Stream.iterate(1)(_+1) flatMap (paths(a,_)) filter (complete(_))
+  def completePaths(s: S): Stream[List[S]] =
+    Stream.iterate(1)(_+1) flatMap (paths(s,_)) filter (complete(_))
 }
 
 object System { // Our factory of Systems
 
   // The most general case, an intensional one
-  def ofFunction[A](f: PartialFunction[A,Set[A]]): System[A] =
-    new CoreSystem[A] with System[A] {
-      override def next(a: A) = f.applyOrElse(a,(x: A)=>Set[A]())
+  def ofFunction[S](f: PartialFunction[S,Set[S]]): System[S] =
+    new CoreSystem[S] with System[S] {
+      override def next(s: S) = f.applyOrElse(s, (x: S)=>Set[S]())
     }
 
   // Extensional specification
-  def ofRelation[A](r: Set[(A,A)]): System[A] = ofFunction{
-    case a => r filter (_._1 == a) map (_._2)
+  def ofRelation[S](rel: Set[(S,S)]): System[S] = ofFunction{
+    case s: S => rel filter (_._1 == s) map (_._2)
   }
 
-  // Extensional with varargs.. note binary tuples can be defined by a->b
-  def ofTransitions[A](r: (A,A)*): System[A] = ofRelation(r.toSet)
+  // Extensional with varargs.. note binary tuples can be defined by s->b
+  def ofTransitions[S](rel: (S,S)*): System[S] = ofRelation(rel.toSet)
 }

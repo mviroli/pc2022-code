@@ -1,4 +1,4 @@
-package examples
+package pc.examples
 
 import pc.modelling.System
 

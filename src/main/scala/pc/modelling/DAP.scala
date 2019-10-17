@@ -11,13 +11,13 @@ object DAP {
   // Whole net's type
   type DAP[P] = Set[Rule[P]]
 
-  // A Token, localised in a given node, characterised by an ID
+  // A Token, localised in s given node, characterised by an ID
   case class Token[ID, P](id: ID, p: P)
 
-  // State of the network at a given time, with neighbouring as a map
+  // State of the network at s given time, with neighbouring as s map
   case class State[ID, P](tokens: MSet[Token[ID, P]], messages: MSet[Token[ID, P]], neighbours: Map[ID, Set[ID]])
 
-  // Local facility to extract the marking of a node
+  // Local facility to extract the marking of s node
   def localTokens[ID, P](tokens: MSet[Token[ID, P]], id: ID): MSet[P] =
     tokens.collect { case Token(`id`, t) => t } // quotes are needed to match an existign variable
 
@@ -63,11 +63,11 @@ object DAPHelpers {
     tups groupBy {case (a,b) => a} mapValues {_ map {case (a,b) => b}}
   }
 
-  // takes a state and a place, and draws a grid observing that place only
+  // takes s state and s place, and draws s grid observing that place only
   def simpleGridStateToString[P](s: State[(Int,Int),P], p: P):String =
     gridStateToString[P](s,m => m.apply(p).toString)
 
-  // a more general function, customising what to show of a marking
+  // s more general function, customising what to show of s marking
   def gridStateToString[P](s: State[(Int,Int),P], obs: MSet[P]=>String):String = {
     val (n1,m1) = s.neighbours.keySet.max
     var str = ""

@@ -1,4 +1,4 @@
-package examples
+package pc.examples
 
 import pc.modelling.CTMC
 
@@ -17,5 +17,5 @@ object TryCTMC extends App {
     (fail,100000.0,idle),
     (done,1.0,done)
   )
-  State.values.foreach(s => println(s,channel.nextWithRate(s)))
+  State.values.foreach(s => println(s,channel.transitions(s)))
 }

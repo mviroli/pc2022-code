@@ -1,4 +1,4 @@
-package examples
+package pc.examples
 
 import java.util.Random
 
@@ -14,12 +14,12 @@ object tryDAP extends App {
   import DAP._
 
   val gossip = DAP[Place](
-    Rule(MSet(a,a),m=>1000,MSet(a),MSet()),   // a|a --1000--> a
-    Rule(MSet(a),m=>1,MSet(a),MSet(a)),       // a --1--> a|^a
+    Rule(MSet(a,a),m=>1000,MSet(a),MSet()),   // s|s --1000--> s
+    Rule(MSet(a),m=>1,MSet(a),MSet(a)),       // s --1--> s|^s
   )
   val system = DAP.toCTMC[ID,Place](gossip)
   val net = DAPHelpers.createRectangularGrid(5,5)
-  // an `a` initial on top left
+  // an `s` initial on top left
   val state = State[ID,Place](MSet(Token((0,0),a)),MSet(),net)
 
   val analysis = CTMCAnalysis(system)

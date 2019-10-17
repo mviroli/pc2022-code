@@ -12,7 +12,7 @@ class MSetSpec extends FlatSpec{
     assert( MSet(10,20,30,30,15,15) == MSet(10,20,30,15,30,15) )
   }
 
-  "A MSet" should "not be equal to another when adding a repetition" in {
+  "A MSet" should "not be equal to another when adding s repetition" in {
     assert( MSet(10,20,30,30,15,15) != MSet(10,20,30,15,30,15,5,5) )
   }
 

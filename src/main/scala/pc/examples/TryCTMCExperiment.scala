@@ -1,4 +1,6 @@
-package examples
+package pc.examples
+
+import pc.modelling.CTMCSimulation
 
 object TryCTMCExperiment extends App {
 
@@ -24,9 +26,9 @@ object TryCTMCExperiment extends App {
                   p = channelAnalysis.experiment(
                         runs = 10000,
                         prop = channelAnalysis.eventually(_ == done),
-                        a0 = idle,
+                        s0 = idle,
                         timeBound = t)) yield (t, p)
 
-  timed{ println(data.mkString("\n")) }
+  CTMCSimulation.timed{ println(data.mkString("\n")) }
   scalax.chart.api.XYLineChart(data).show() // with dependencies on scala-chart
 }

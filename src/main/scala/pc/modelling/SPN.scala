@@ -15,12 +15,12 @@ object SPN {
 
   def apply[P](transitions: (MSet[P],MSet[P]=>Double,MSet[P],MSet[P])*): SPN[P] = transitions.toSet
 
-  // Syntactic sugar to write transitions as:  (a,b,c) ~~> (d,e)
-  implicit final class LeftTransitionRelation[A](private val self: MSet[A]){
-    def ~~> (y: MSet[A]): Tuple3[MSet[A], MSet[A], MSet[A]] = Tuple3(self, y, MSet[A]())
+  // Syntactic sugar to write transitions as:  (s,b,c) ~~> (d,e)
+  implicit final class LeftTransitionRelation[P](private val self: MSet[P]){
+    def ~~> (y: MSet[P]): Tuple3[MSet[P], MSet[P], MSet[P]] = Tuple3(self, y, MSet[P]())
   }
-  // Syntactic sugar to write transitions as:  MSet(a,b,c) ~~> MSet(d,e) ~~ MSet(f)
-  implicit final class RightTransitionRelation[A](private val self: Tuple3[MSet[A],MSet[A],MSet[A]]){
-    def ^^^ (z: MSet[A]): Tuple3[MSet[A], MSet[A],MSet[A]] = Tuple3(self._1, self._2, z)
+  // Syntactic sugar to write transitions as:  MSet(s,b,c) ~~> MSet(d,e) ~~ MSet(f)
+  implicit final class RightTransitionRelation[P](private val self: Tuple3[MSet[P],MSet[P],MSet[P]]){
+    def ^^^ (z: MSet[P]): Tuple3[MSet[P], MSet[P],MSet[P]] = Tuple3(self._1, self._2, z)
   }
 }
