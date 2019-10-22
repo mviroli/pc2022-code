@@ -1,4 +1,4 @@
-package pc.modelling
+package pc.utils
 
 // A multiset datatype
 trait MSet[A] extends (A => Int) {

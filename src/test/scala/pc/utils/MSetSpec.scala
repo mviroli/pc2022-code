@@ -1,4 +1,4 @@
-package pc.modelling
+package pc.utils
 
 import org.scalatest.FlatSpec
 

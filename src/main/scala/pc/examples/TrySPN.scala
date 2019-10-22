@@ -1,7 +1,7 @@
 package pc.examples
 
-import pc.modelling.{CTMCAnalysis, MSet, PetriNet, SPN}
-
+import pc.modelling.{CTMCAnalysis, PetriNet, SPN}
+import pc.utils.MSet
 import java.util.Random
 
 object TrySPN extends App {

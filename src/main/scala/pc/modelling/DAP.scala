@@ -2,6 +2,8 @@ package pc.modelling
 
 import java.util.Random
 
+import pc.utils.MSet
+
 // modules defining the concept of Distributed Asynchronous stochastic Petri net
 object DAP {
 

@@ -1,6 +1,7 @@
 package pc.modelling
 
 import org.scalatest.FlatSpec
+import pc.utils.MSet
 
 class PNSpec extends FlatSpec{
   "PN for mutual exclusion" should "properly generate 7-length paths" in {

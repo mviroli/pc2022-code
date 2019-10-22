@@ -25,6 +25,9 @@ trait System[S] extends CoreSystem[S] {
            next <- next(path.last)) yield (path :+ next)
   }
 
+  def completePathsUpTo(s: S, depth:Int): Stream[List[S]] =
+    Stream.iterate(1)(_+1) take (depth) flatMap (paths(s,_)) filter (complete(_))
+
   // an infinite stream: might loop, use with care!
   def completePaths(s: S): Stream[List[S]] =
     Stream.iterate(1)(_+1) flatMap (paths(s,_)) filter (complete(_))

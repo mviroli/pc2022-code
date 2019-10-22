@@ -1,6 +1,6 @@
 package pc.examples
 
-import pc.modelling.MSet
+import pc.utils.MSet
 
 // Some simple client code.. also check MSetSpec and MSetCheck
 object TryMSet extends App {

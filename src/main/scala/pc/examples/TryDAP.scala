@@ -2,7 +2,8 @@ package pc.examples
 
 import java.util.Random
 
-import pc.modelling.{CTMCAnalysis, DAP, DAPHelpers, MSet}
+import pc.modelling.{CTMCAnalysis, DAP, DAPHelpers}
+import pc.utils.MSet
 
 object tryDAP extends App {
   object place extends Enumeration {

@@ -1,6 +1,7 @@
 package pc.examples
 
-import pc.modelling.{MSet, PetriNet}
+import pc.modelling.PetriNet
+import pc.utils.MSet
 
 object TryPN extends App {
   // Specification of my data-type for states

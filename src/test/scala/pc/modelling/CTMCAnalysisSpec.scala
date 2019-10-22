@@ -6,7 +6,7 @@ import org.scalatest.FlatSpec
 import org.scalatest.Matchers._
 
 class CTMCAnalysisSpec extends FlatSpec{
-  "CTMC analysis on channel" should "give right probability" in {
+  "CTMC analysis on ch" should "give right probability" in {
     object State extends Enumeration {
       val idle,send,done,fail = Value
     }

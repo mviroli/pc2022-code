@@ -1,4 +1,4 @@
-package pc.modelling
+package pc.utils
 
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Prop.forAll

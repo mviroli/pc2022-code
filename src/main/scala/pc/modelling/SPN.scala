@@ -1,5 +1,7 @@
 package pc.modelling
 
+import pc.utils.MSet
+
 object SPN {
 
   // pre-conditions, rate, effects, inhibition

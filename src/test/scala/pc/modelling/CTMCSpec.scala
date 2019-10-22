@@ -3,7 +3,7 @@ package pc.modelling;
 import org.scalatest.FlatSpec
 
 class CTMCSpec extends FlatSpec{
-  "CTMC channel" should "work as expected" in {
+  "CTMC ch" should "work as expected" in {
     object State extends Enumeration {
       val idle, send, done, fail = Value
     }
