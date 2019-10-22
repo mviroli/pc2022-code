@@ -1,29 +1,20 @@
 package pc.modelling
 
 import org.scalatest.FlatSpec
-import pc.utils.MSet
 
 class PNSpec extends FlatSpec{
+
+  import pc.examples.PNMutualExclusion, pc.examples.PNMutualExclusion.place._
+  import pc.utils.MSet
+
+  val pnME = PNMutualExclusion.mutualExclusionSystem()
+
   "PN for mutual exclusion" should "properly generate 7-length paths" in {
-    // Specification of my data-type for states
-    object place extends Enumeration {
-      val n,t,c = Value
-    }
-    type Place = place.Value
-    import PetriNet._
-    import place._
 
-    val pn = PetriNet[Place](
-      MSet(n) ~~> MSet(t),
-      MSet(t) ~~> MSet(c) ^^^ MSet(c),
-      MSet(c) ~~> MSet())
+    val expected1 = List(MSet(N,N), MSet(T,N), MSet(T,T), MSet(C,T), MSet(T), MSet(C), MSet())
+    val expected2 = List(MSet(N,N), MSet(T,N), MSet(C,N), MSet(C,T), MSet(T), MSet(C), MSet())
+    val expected3 = List(MSet(N,N), MSet(T,N), MSet(C,N), MSet(N), MSet(T), MSet(C), MSet())
 
-    val system = toSystem(pn)
-
-    val expected1 = List(MSet(n,n), MSet(t,n), MSet(t,t), MSet(c,t), MSet(t), MSet(c), MSet())
-    val expected2 = List(MSet(n,n), MSet(t,n), MSet(c,n), MSet(c,t), MSet(t), MSet(c), MSet())
-    val expected3 = List(MSet(n,n), MSet(t,n), MSet(c,n), MSet(n), MSet(t), MSet(c), MSet())
-
-    assert(system.paths(MSet(n,n),7).toSet == Set(expected1,expected2,expected3))
+    assert(pnME.paths(MSet(N,N),7).toSet == Set(expected1,expected2,expected3))
   }
 }
