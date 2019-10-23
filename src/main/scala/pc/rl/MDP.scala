@@ -4,6 +4,7 @@ import pc.rl.MDP.R
 import pc.utils.Stochastics
 
 import scala.annotation.tailrec
+import pc.utils.Stochastics._
 
 // a system/environment, modelled as a (hidden) MDP, i.e., an oracle
 trait MDPSystem[S,A] extends ((S,A) => (MDP.R,S)) {
@@ -16,7 +17,7 @@ trait MDPSystem[S,A] extends ((S,A) => (MDP.R,S)) {
 trait MDP[S,A] extends MDPSystem[S,A] {
 
   def transitions(s: S): Set[(A,MDP.P,MDP.R,S)]
-  def take(s: S, a: A): (MDP.R,S) = Stochastics.draw(transitions(s).collect{ case (`a`,p,r,s) => (p,(r,s))})
+  def take(s: S, a: A): (MDP.R,S) = Stochastics.draw(cumulative(transitions(s).collect{ case (`a`,p,r,s) => (p,(r,s))}.toList))
 }
 
 // MDP factories

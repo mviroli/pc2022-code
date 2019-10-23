@@ -1,6 +1,7 @@
 package pc.examples
 
 import pc.modelling.CTMCSimulation
+import pc.utils.Time
 
 object TryCTMCExperiment extends App {
 
@@ -29,6 +30,6 @@ object TryCTMCExperiment extends App {
                         s0 = idle,
                         timeBound = t)) yield (t, p)
 
-  CTMCSimulation.timed{ println(data.mkString("\n")) }
+  Time.timed{ println(data.mkString("\n")) }
   scalax.chart.api.XYLineChart(data).show() // with dependencies on scala-chart
 }

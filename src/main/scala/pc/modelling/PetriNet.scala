@@ -19,11 +19,11 @@ object PetriNet {
   def toSystem[P](pn: PetriNet[P]): System[MSet[P]] =
     System.ofFunction( toPartialFunction(pn))
 
-  // Syntactic sugar to write transitions as:  (s,b,c) ~~> (d,e)
+  // Syntactic sugar to write transitions as:  (s,b,C) ~~> (d,e)
   implicit final class LeftTransitionRelation[P](private val self: MSet[P]){
     def ~~> (y: MSet[P]): Tuple3[MSet[P], MSet[P], MSet[P]] = Tuple3(self, y, MSet[P]())
   }
-  // Syntactic sugar to write transitions as:  MSet(s,b,c) ~~> MSet(d,e) ~~ MSet(f)
+  // Syntactic sugar to write transitions as:  MSet(s,b,C) ~~> MSet(d,e) ~~ MSet(f)
   implicit final class RightTransitionRelation[P](
     private val self: Tuple3[MSet[P],MSet[P],MSet[P]]
   ){

@@ -16,7 +16,7 @@ object DAP {
   // A Token, localised in s given node, characterised by an ID
   case class Token[ID, P](id: ID, p: P)
 
-  // State of the network at s given time, with neighbouring as s map
+  // state of the network at s given time, with neighbouring as s map
   case class State[ID, P](tokens: MSet[Token[ID, P]], messages: MSet[Token[ID, P]], neighbours: Map[ID, Set[ID]])
 
   // Local facility to extract the marking of s node
