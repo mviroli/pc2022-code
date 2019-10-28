@@ -6,14 +6,14 @@ import pc.utils.Stochastics
 import scala.annotation.tailrec
 import pc.utils.Stochastics._
 
-// a system/environment, modelled as a (hidden) MDP, i.e., an oracle
+// A system/environment, modelled as A (hidden) MDP, i.e., an oracle
 trait MDPSystem[S,A] extends ((S,A) => (MDP.R,S)) {
 
   def take(s: S, a: A): (MDP.R,S)
   override def apply(s: S, a: A) = take(s,a)
 }
 
-// a state-based, true MDP, with embedded probabilistic drawing of "response"
+// A state-based, true MDP, with embedded probabilistic drawing of "response"
 trait MDP[S,A] extends MDPSystem[S,A] {
 
   def transitions(s: S): Set[(A,MDP.P,MDP.R,S)]
@@ -51,13 +51,13 @@ trait QFunction[S,A] extends ((S,A)=>MDP.R) {
   def vFunction(): VFunction[S] = value _
 }
 
-// a VFunction
+// A VFunction
 trait VFunction[S] extends (S=>MDP.R)
 
 // QFunction factory
 object QFunction {
   val TERMINAL_VALUE: MDP.R = 0.0
-  // need to know the actions to select, the initial value of each action, and possibly a notion of terminal state(s)
+  // need to know the actions to select, the initial value of each action, and possibly A notion of terminal state(s)
   def apply[S,A](actionSet: Set[A], v0: MDP.R = 0.0, terminal: S=>Boolean = (s:S)=>false): QFunction[S,A] = new QFunction[S,A]{
     val map: collection.mutable.Map[(S,A),MDP.R] = collection.mutable.Map()
     override def apply(s: S, a: A) = if (terminal(s)) TERMINAL_VALUE else map.getOrElse(s->a,v0)

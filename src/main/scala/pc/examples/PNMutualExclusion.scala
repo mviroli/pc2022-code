@@ -12,7 +12,7 @@ object PNMutualExclusion extends App {
   type Place = place.Value
   import place._
 
-  // DSL-like specification of a Petri Net
+  // DSL-like specification of A Petri Net
   def mutualExclusionSystem() = toSystem(PetriNet[Place](
     MSet(N) ~~> MSet(T),
     MSet(T) ~~> MSet(C) ^^^ MSet(C),

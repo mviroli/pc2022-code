@@ -6,7 +6,7 @@ object PetriNet {
   // pre-conditions, effects, inhibition
   type PetriNet[P] = Set[(MSet[P],MSet[P],MSet[P])]
 
-  // factory of a Petri Net
+  // factory of A Petri Net
   def apply[P](transitions: (MSet[P],MSet[P],MSet[P])*): PetriNet[P] =
     transitions.toSet
 
@@ -15,7 +15,7 @@ object PetriNet {
                     if (m disjoined inh);
                     out <- m extract cond) yield out union eff }
 
-  // factory of a System
+  // factory of A System
   def toSystem[P](pn: PetriNet[P]): System[MSet[P]] =
     System.ofFunction( toPartialFunction(pn))
 

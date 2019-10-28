@@ -1,8 +1,7 @@
 package pc.modelling
 
 import java.util.Random
-
-import pc.utils.MSet
+import pc.utils.{MSet,Grids}
 
 // modules defining the concept of Distributed Asynchronous stochastic Petri net
 object DAP {
@@ -13,15 +12,15 @@ object DAP {
   // Whole net's type
   type DAP[P] = Set[Rule[P]]
 
-  // A Token, localised in s given node, characterised by an ID
+  // A Token, localised in A given node, characterised by an ID
   case class Token[ID, P](id: ID, p: P)
 
-  // state of the network at s given time, with neighbouring as s map
+  // state of the network at A given time, with neighbouring as A map
   case class State[ID, P](tokens: MSet[Token[ID, P]], messages: MSet[Token[ID, P]], neighbours: Map[ID, Set[ID]])
 
   // Local facility to extract the marking of s node
   def localTokens[ID, P](tokens: MSet[Token[ID, P]], id: ID): MSet[P] =
-    tokens.collect { case Token(`id`, t) => t } // quotes are needed to match an existign variable
+    tokens.collect { case Token(`id`, t) => t } // quotes are needed to match an existing variable
 
   // Here's the implementation of operational semantics
   def toPartialFunction[ID, P](spn: DAP[P]): PartialFunction[State[ID, P], Set[(Double, State[ID, P])]] = {
@@ -39,7 +38,7 @@ object DAP {
       // we should also spread messages
       val s2 = for (
         Token(id: ID, p: P) <- messages.asList.toSet; // get any message
-        newtokens = tokens union MSet.ofList(neighbours(id).toList.map(n => Token(n, p))); // compute spread tokens
+        newtokens = tokens union MSet.ofList(neighbours(id).toList.map(Token(_, p))); // compute spread tokens
         newmessages <- messages extract MSet(Token(id, p))) // drop the message
         yield (Double.PositiveInfinity, State(newtokens, newmessages, neighbours)) // note rate is infinity
 
@@ -53,32 +52,13 @@ object DAP {
   def apply[P](rules: Rule[P]*): DAP[P] = rules.toSet
 }
 
-object DAPHelpers {
+object DAPGrid {
   import DAP._
 
-  // creates the useful grid-like neighboring relation
-  def createRectangularGrid(n:Int, m:Int): Map[(Int,Int),Set[(Int,Int)]] = {
-    val tups = for (
-      i:Int <- (0 to n-1).toSet; j <- 0 to m-1;
-      (k,l)<-Set( (i-1,j), (i+1,j), (i,j-1), (i,j+1));
-      if (k>=0 && k<n && l>=0 && l<m)) yield ( (i,j),(k,l) )
-    tups groupBy {case (a,b) => a} mapValues {_ map {case (a,b) => b}}
-  }
-
-  // takes s state and s place, and draws s grid observing that place only
+  // prints a grid of counting of p's tokens in the form of tokens(messages)
   def simpleGridStateToString[P](s: State[(Int,Int),P], p: P):String =
-    gridStateToString[P](s,m => m.apply(p).toString)
-
-  // s more general function, customising what to show of s marking
-  def gridStateToString[P](s: State[(Int,Int),P], obs: MSet[P]=>String):String = {
-    val (n1,m1) = s.neighbours.keySet.max
-    var str = ""
-    for (j <- 0 to n1){
-      for (i <- 0 to m1){
-        str = str + obs(localTokens(s.tokens,(i,j)))+"("+obs(localTokens(s.messages,(i,j)))+")\t"
-      }
-      str = str + "\n"
-    }
-    str
-  }
+    Grids.gridLikeToString(s.neighbours.keySet.max._1,s.neighbours.keySet.max._1,
+      (i,j) =>  localTokens(s.tokens,(i,j)).apply(p).toString +
+               "("+localTokens(s.messages, (i,j)).apply(p).toString+")"
+    )
 }

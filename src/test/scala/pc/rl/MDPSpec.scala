@@ -45,7 +45,7 @@ class RLSpec extends FlatSpec{
     assert( (-5 to 10).forall(i => qf.detTake(State(i))==left))
   }
 
-  "QRL" should "properly execute a run after learning" in {
+  "QRL" should "properly execute A run after learning" in {
     var qf = qfTW()
     qf = rl.runEpisodes(100,qf)
     assertResult( List((left,State(-1)), (left,State(-2)), (left,State(-3)), (left,State(-4)), (left,State(-5))) )(rl.run(qf).toList)
