@@ -15,16 +15,14 @@ trait System[S] extends CoreSystem[S] {
   def complete(p: List[S]): Boolean =
     normalForm(p.last)
 
-  def paths(s: S, depth: Int): Stream[List[S]] = {
-    if (depth == 0)
-      Stream()
-    else if (depth == 1 || normalForm(s))
-      Stream(List(s))
-    else
-      for (path <- paths(s, depth - 1);
-           next <- next(path.last)) yield (path :+ next)
+  // paths of exactly length `depth`
+  def paths(s: S, depth: Int): Stream[List[S]] = depth match {
+    case 0 => Stream()
+    case 1 => Stream(List(s))
+    case _ => for (path <- paths(s, depth - 1); next <- next(path.last)) yield (path :+ next)
   }
 
+  // to be optimised
   def completePathsUpTo(s: S, depth:Int): Stream[List[S]] =
     Stream.iterate(1)(_+1) take (depth) flatMap (paths(s,_)) filter (complete(_))
 

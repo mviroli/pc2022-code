@@ -20,7 +20,7 @@ object Stochastics extends App {
   // (p1,a1),...,(pn,an) + 100 --> {a1 -> P1%,...,an -> Pn%}
   def statistics[A](choices: Set[(Double,A)], size: Int)
                    (implicit rnd: Random = random): Map[A,Int] =
-    (1 to 10000).map(i => Stochastics.draw(cumulative(choices.toList))(random))
+    (1 to size).map(i => Stochastics.draw(cumulative(choices.toList))(random))
                 .groupBy(identity)
                 .mapValues(_.size)
 }
