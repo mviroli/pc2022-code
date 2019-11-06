@@ -2,7 +2,7 @@ package pc.examples
 
 import java.util.Random
 
-import pc.modelling.{CTMCAnalysis, DAP, DAPGrid}
+import pc.modelling.{CTMCSimulation, DAP, DAPGrid}
 import pc.utils.{MSet, Grids}
 
 object DAPGossip extends App {
@@ -23,8 +23,8 @@ object DAPGossip extends App {
   // an `a` initial on top left
   val state = State[ID,Place](MSet(Token((0,0),A)),MSet(),net)
 
-  val analysis = CTMCAnalysis(gossipCTMC)
-  analysis.newSimulationTrace(state,new Random).take(50).toList.foreach(
+  val simulator = CTMCSimulation(gossipCTMC)
+  simulator.newSimulationTrace(state,new Random).take(50).toList.foreach(
     step => {
       println(step._1) // print time
       println(DAPGrid.simpleGridStateToString[Place](step._2,A)) // print state, i.e., A's

@@ -8,15 +8,15 @@ trait CTMCAnalysis[S] extends CTMCSimulation[S] { self: CTMC[S] =>
 
   // globally is simply achieved by equivalence not G x= F not x
   def eventually[A](filt: A=>Boolean): Property[A] =
-    (trace) => trace.map{case (t,a) => filt(a)}.exists(x=>x)
+    (trace) => trace.exists{case (t,a) => filt(a)}
 
-  // takes s property and makes it time bounded by the magics of streams
+  // takes a property and makes it time bounded by the magics of streams
   def bounded[A](timeBound: Double)(prop: Property[A]): Property[A] =
-    trace => prop(trace.takeWhile { case (t,a) => t<=timeBound })
+    trace => prop(trace.takeWhile { case (t,_) => t<=timeBound })
 
-  // s PRISM-like experiment, giving s statistical result (in [0,1])
+  // a PRISM-like experiment, giving a statistical result (in [0,1])
   def experiment(runs: Int = 10000, prop: Property[S], rnd:Random = new Random, s0:S, timeBound: Double): Double =
-    (0 to runs).count(i=>bounded(timeBound)(prop)(newSimulationTrace(s0,rnd))).toDouble/runs
+    (0 to runs).count(i => bounded(timeBound)(prop)(newSimulationTrace(s0,rnd))).toDouble/runs
 }
 
 object CTMCAnalysis {

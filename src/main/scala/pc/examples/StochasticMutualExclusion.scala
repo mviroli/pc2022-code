@@ -1,6 +1,6 @@
 package pc.examples
 
-import pc.modelling.{CTMCAnalysis, PetriNet, SPN}
+import pc.modelling.{CTMCSimulation, SPN}
 import pc.utils.MSet
 import java.util.Random
 
@@ -19,8 +19,8 @@ object StochasticMutualExclusion extends App {
     (MSet(C), m=>2.0,MSet(),MSet()))
 
 
-  val rwAnalysis = CTMCAnalysis(toCTMC(spn))
-  println(rwAnalysis.newSimulationTrace(MSet(N,N,N,N),new Random)
+  val rwSimulator = CTMCSimulation(toCTMC(spn))
+  println(rwSimulator.newSimulationTrace(MSet(N,N,N,N),new Random)
                     .take(20)
                     .toList.mkString("\n"))
 }

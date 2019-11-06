@@ -12,13 +12,13 @@ object DAP {
   // Whole net's type
   type DAP[P] = Set[Rule[P]]
 
-  // A Token, localised in A given node, characterised by an ID
+  // A Token, localised in a given node, characterised by an ID
   case class Token[ID, P](id: ID, p: P)
 
-  // state of the network at A given time, with neighbouring as A map
+  // state of the network at z given time, with neighbouring as a map
   case class State[ID, P](tokens: MSet[Token[ID, P]], messages: MSet[Token[ID, P]], neighbours: Map[ID, Set[ID]])
 
-  // Local facility to extract the marking of s node
+  // Local facility to extract the marking of a node
   def localTokens[ID, P](tokens: MSet[Token[ID, P]], id: ID): MSet[P] =
     tokens.collect { case Token(`id`, t) => t } // quotes are needed to match an existing variable
 
@@ -37,7 +37,7 @@ object DAP {
 
       // we should also spread messages
       val s2 = for (
-        Token(id: ID, p: P) <- messages.asList.toSet; // get any message
+        Token(id: ID, p: P) <- messages.asList.toSet; // get any pending message
         newtokens = tokens union MSet.ofList(neighbours(id).toList.map(Token(_, p))); // compute spread tokens
         newmessages <- messages extract MSet(Token(id, p))) // drop the message
         yield (Double.PositiveInfinity, State(newtokens, newmessages, neighbours)) // note rate is infinity
