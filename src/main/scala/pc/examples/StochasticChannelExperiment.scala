@@ -10,9 +10,9 @@ object StochasticChannelExperiment extends App {
   val channel = StochasticChannel.stocChannel
 
   val channelAnalysis = CTMCAnalysis(channel)
-  val data = for (t <- (0.1 to 10.0 by 0.1).toStream;
+  val data = for (t <- (0.1 to 10.0 by 0.1).toParArray; //parallel execution
                   p = channelAnalysis.experiment(
-                        runs = 10000,
+                        runs = 19000,
                         prop = channelAnalysis.eventually(_ == DONE),
                         s0 = IDLE,
                         timeBound = t)) yield (t, p)

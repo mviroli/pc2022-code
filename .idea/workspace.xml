@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ae36cbfc-395f-4b4f-81fe-ac6580f8f0a6" name="Default Changelist" comment="lesson 02 ready">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/DAPGossip.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/DAPGossip.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticMutualExclusion.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticMutualExclusion.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/TryCTMCExperiment.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannelExperiment.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannelExperiment.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannelExperiment.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCAnalysis.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCAnalysis.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/DAP.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/DAP.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/SPN.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/SPN.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/modelling/CTMCAnalysisSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/StochasticChannelExperimentSpec.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +83,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="ScalaTest.ScalaTests in 'scala'">
+  <component name="RunManager" selected="Application.StochasticChannelExperiment">
     <configuration name="DAPGossip" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.DAPGossip" />
       <module name="formalsystems" />
@@ -132,28 +127,6 @@
       <module name="formalsystems" />
       <option name="allowRunningInParallel" value="false" />
       <option name="testKind" value="Class" />
-      <option name="classBuf">
-        <list>
-          <option value="pc.utils.MSetSpec" />
-          <option value="pc.utils.StochasticsSpec" />
-          <option value="pc.utils.StochasticsSpec" />
-          <option value="pc.utils.MSetSpec" />
-          <option value="pc.modelling.PNSpec" />
-          <option value="pc.modelling.SystemChannelSpec" />
-          <option value="pc.modelling.StochasticChannelSpec" />
-          <option value="pc.modelling.StochasticChannelExperimentSpec" />
-          <option value="pc.modelling.SystemChannelSpec" />
-          <option value="pc.modelling.StochasticChannelExperimentSpec" />
-          <option value="pc.modelling.PNSpec" />
-          <option value="pc.modelling.StochasticChannelSpec" />
-          <option value="pc.rl.QFunctionSpec" />
-          <option value="pc.rl.MDPSpec" />
-          <option value="pc.rl.RLSpec" />
-          <option value="pc.rl.QFunctionSpec" />
-          <option value="pc.rl.MDPSpec" />
-          <option value="pc.rl.RLSpec" />
-        </list>
-      </option>
       <option name="envs">
         <map />
       </option>
@@ -162,7 +135,7 @@
       <option name="searchTest" value="Across module dependencies" />
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
-      <option name="testPackagePath" value="" />
+      <option name="testClassPath" value="" />
       <option name="useSbt" value="false" />
       <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
@@ -199,11 +172,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
-        <item itemvalue="ScalaTest.StochasticChannelExperimentSpec" />
-        <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
         <item itemvalue="Application.StochasticChannelExperiment" />
         <item itemvalue="Application.DAPGossip" />
+        <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
+        <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
+        <item itemvalue="ScalaTest.StochasticChannelExperimentSpec" />
       </list>
     </recent_temporary>
   </component>

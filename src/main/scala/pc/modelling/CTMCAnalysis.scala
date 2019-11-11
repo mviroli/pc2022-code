@@ -16,7 +16,7 @@ trait CTMCAnalysis[S] extends CTMCSimulation[S] { self: CTMC[S] =>
 
   // a PRISM-like experiment, giving a statistical result (in [0,1])
   def experiment(runs: Int = 10000, prop: Property[S], rnd:Random = new Random, s0:S, timeBound: Double): Double =
-    (0 to runs).count(i => bounded(timeBound)(prop)(newSimulationTrace(s0,rnd))).toDouble/runs
+    (0 until runs).count(i => bounded(timeBound)(prop)(newSimulationTrace(s0,rnd))).toDouble/runs
 }
 
 object CTMCAnalysis {
