@@ -1,9 +1,7 @@
 package pc.rl
 
-import pc.utils.Stochastics
-
 import scala.annotation.tailrec
-import pc.utils.Stochastics._
+
 
 trait QRLImpl[S,A] extends QRL[S,A] {
 
@@ -71,18 +69,15 @@ trait QRLImpl[S,A] extends QRL[S,A] {
       }
 
       @tailrec
-      final override def runEpisodes(episodes: Int, episodeLength: Int, qf: Q): Q = {
+      final override def learn(episodes: Int, episodeLength: Int, qf: Q): Q = {
         @tailrec
         def runSingleEpisode(in: (S,Q), episodeLength: Int): (S,Q) =
           if (episodeLength==0 || system.terminal(in._1)) in else runSingleEpisode(updateQ(in._1,in._2),episodeLength-1)
         episodes match {
           case 0 => qf
-          case _ => runEpisodes( episodes-1, episodeLength, runSingleEpisode( (system.initial,qf), episodeLength)._2)
+          case _ => learn( episodes-1, episodeLength, runSingleEpisode( (system.initial,qf), episodeLength)._2)
         }
       }
   }
-
-
-  final override def learn(l: LearningProcess, episodes: Int, episodeLength: Int): Q = l.runEpisodes(episodes,episodeLength,l.q0)
 }
 

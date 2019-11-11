@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae36cbfc-395f-4b4f-81fe-ac6580f8f0a6" name="Default Changelist" comment="lesson 02 ready">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QLearningMatrix.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/TryQLearningMatrix.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QLearningMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QLearningMatrix.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QRL.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QRL.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QRLImpl.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QRLImpl.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TryRL.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/TryRL.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TwoWaysMDP.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/TwoWaysMDP.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/Stochastics.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/utils/Stochastics.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/pc/rl/MDPSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/rl/MDPSpec.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,7 +88,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TryQLMatrix">
+  <component name="RunManager" selected="ScalaTest.ScalaTests in 'rl'">
     <configuration name="DAPGossip" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.DAPGossip" />
       <module name="formalsystems" />
@@ -117,7 +116,7 @@
       </method>
     </configuration>
     <configuration name="TryQLMatrix" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.rl.TryQLMatrix" />
+      <option name="MAIN_CLASS_NAME" value="pc.rl.TryQMatrix" />
       <module name="formalsystems" />
       <extension name="coverage">
         <pattern>
@@ -181,8 +180,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TryQLMatrix" />
         <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
+        <item itemvalue="Application.TryQLMatrix" />
         <item itemvalue="Application.TryRL" />
         <item itemvalue="Application.StochasticChannelExperiment" />
         <item itemvalue="Application.DAPGossip" />

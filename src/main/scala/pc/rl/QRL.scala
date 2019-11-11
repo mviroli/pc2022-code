@@ -54,7 +54,7 @@ trait QRL[S,A] {
     def vFunction: VFunction = s => actions.map{this(s,_)}.max
   }
 
-  // The Qlearning system, with parameters
+  // The learning system, with parameters
   trait LearningProcess {
     val system: System
     val gamma: Double
@@ -63,9 +63,6 @@ trait QRL[S,A] {
     val q0: Q
 
     def updateQ(s: S, qf: Q): (S, Q)
-    def runEpisodes(episodes: Int, episodeLength: Int, qf: Q): Q
+    def learn(episodes: Int, episodeLength: Int, qf: Q): Q
   }
-
-  // the top-level learning call, yielding the policy
-  def learn(l: LearningProcess, episodes: Int, episodeLength: Int): Q
 }
