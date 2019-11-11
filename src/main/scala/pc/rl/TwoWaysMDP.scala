@@ -15,18 +15,20 @@ object TwoWaysMDP {
 
   val terminalTW: State => Boolean = {case State(n) => (n<=target | n>=maxRight)}
 
-  def qfTW(): QFunction[State,Action] = QFunction(Action.values,1.0,terminalTW)
+  object rl extends QRLImpl[State,Action] {
 
-  def mdpTW(): MDPSystem[State,Action] = MDP.ofFunction[State,Action] {
-    case State(n) => Set( (left,1, if(n==target+1) reward else penalty,State(n-1)),
-      (right,1, penalty, if (n==maxRight) State(n) else State(n+1)) )
+    def qfTW(): Q = QFunction(Action.values, 1.0, terminalTW)
+
+    def mdpTW(): Environment = MDP.ofFunction {
+      case State(n) => Set((left, 1, if (n == target + 1) reward else penalty, State(n - 1)),
+        (right, 1, penalty, if (n == maxRight) State(n) else State(n + 1)))
+    }
+
+    def rlTW() = QLearning(
+      system = QSystem(mdpTW(), State(0), terminalTW),
+      gamma = 0.9,
+      alpha = 0.5,
+      q0 = qfTW()
+    )
   }
-
-  def rlTW() = QLearning[State,Action](
-    mdp = mdpTW(),
-    initial = State(0),
-    terminal = terminalTW,
-    gamma = 0.9,
-    alpha = 0.5
-  )
 }
