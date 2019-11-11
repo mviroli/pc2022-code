@@ -17,6 +17,14 @@ object Stochastics extends App {
     cumulativeList.collectFirst{ case (r, a) if r >= rndVal => a }.get
   }
 
+  def uniformDraw[A](actions: Set[A])(implicit rnd: Random = random): A = {
+    actions.toList(random.nextInt(actions.size))
+  }
+
+  def drawFiltered(filter: Double=>Boolean)(implicit rnd: Random = random): Boolean = {
+    filter(rnd.nextDouble())
+  }
+
   // (p1,a1),...,(pn,an) + 100 --> {a1 -> P1%,...,an -> Pn%}
   def statistics[A](choices: Set[(Double,A)], size: Int)
                    (implicit rnd: Random = random): Map[A,Int] =

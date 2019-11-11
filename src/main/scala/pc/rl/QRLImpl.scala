@@ -7,13 +7,6 @@ import pc.utils.Stochastics._
 
 trait QRLImpl[S,A] extends QRL[S,A] {
 
-  trait MDP extends Environment {
-
-    def transitions(s: S): Set[(A, P, R, S)]
-
-    override def take(s: S, a: A): (R, S) = Stochastics.draw(cumulative(transitions(s).collect { case (`a`, p, r, s) => (p, (r, s)) }.toList))
-  }
-
   // MDP factories
   object MDP {
 
@@ -35,17 +28,16 @@ trait QRLImpl[S,A] extends QRL[S,A] {
     }
   }
 
-  // Q factory
-  object QFunction {
-    val TERMINAL_VALUE: R = 0.0
-    // need to know the actions to select, the initial value of each action, and possibly A notion of terminal state(s)
-    def apply(actionSet: Set[A], v0: R = 0.0, terminal: S=>Boolean = (s:S)=>false): Q = new Q{
-      val map: collection.mutable.Map[(S,A),R] = collection.mutable.Map()
-      override def apply(s: S, a: A) = if (terminal(s)) TERMINAL_VALUE else map.getOrElse(s->a,v0)
-      override def update(s: S, a: A, v: Double): Q = { map += ((s->a)->v); this }
-      override def actions = actionSet
-      override def toString = map.toString
-    }
+  // A Map-based implementation, with defaults for terminal and unexplored states
+  case class QFunction(
+    override val actions: Set[A],
+    v0: R = 0.0,
+    terminal: S=>Boolean = (s:S)=>false,
+    terminalValue: Double = 0.0) extends Q {
+    val map: collection.mutable.Map[(S,A),R] = collection.mutable.Map()
+    override def apply(s: S, a: A) = if (terminal(s)) terminalValue else map.getOrElse(s->a,v0)
+    override def update(s: S, a: A, v: Double): Q = { map += ((s->a)->v); this }
+    override def toString = map.toString
   }
 
   case class QSystem(
@@ -54,8 +46,8 @@ trait QRLImpl[S,A] extends QRL[S,A] {
     override val terminal: S => Boolean) extends System{
 
     final override def run(p: Policy): Stream[(A,S)] = {
-      val a0 = p.choice(initial)
-      Stream.iterate( (initial,a0,initial)){ case (_,a,s2) => val a2 = p.choice(s2); (s2,a2,environment.take(s2,a2)._2) }
+      val a0 = p(initial)
+      Stream.iterate( (initial,a0,initial)){ case (_,a,s2) => val a2 = p(s2); (s2,a2,environment.take(s2,a2)._2) }
         .tail
         .takeWhile {case (s1,_,_) => !terminal(s1)}
         .map {case (_,a,s2) => (a,s2)}
@@ -67,39 +59,30 @@ trait QRLImpl[S,A] extends QRL[S,A] {
     override val system: QSystem,
     override val gamma: Double,
     override val alpha: Double,
-    override val q0: Q) extends Learning {
+    override val epsilon: Double,
+    override val q0: Q) extends LearningProcess {
 
       override def updateQ(s: S, qf: Q): (S,Q) = {
-        val a = qf.choice(s)
+        val a = qf.explorativePolicy(epsilon)(s)
         val (r,s2) = system.environment.take(s,a)
-        val vr = (1-alpha)*qf(s,a) + alpha*(r + gamma * qf.value(s2))
+        val vr = (1-alpha)*qf(s,a) + alpha*(r + gamma * qf.vFunction(s2))
         val qf2 = qf.update(s,a,vr)
         (s2,qf2)
       }
 
       @tailrec
-      final override def runEpisodes(episodes: Int, qf: Q): Q = {
+      final override def runEpisodes(episodes: Int, episodeLength: Int, qf: Q): Q = {
         @tailrec
-        def runSingleEpisode(in: (S,Q)): (S,Q) =
-          if (system.terminal(in._1)) in else runSingleEpisode(updateQ(in._1,in._2))
+        def runSingleEpisode(in: (S,Q), episodeLength: Int): (S,Q) =
+          if (episodeLength==0 || system.terminal(in._1)) in else runSingleEpisode(updateQ(in._1,in._2),episodeLength-1)
         episodes match {
           case 0 => qf
-          case _ => runEpisodes( episodes-1, runSingleEpisode( (system.initial,qf))._2)
+          case _ => runEpisodes( episodes-1, episodeLength, runSingleEpisode( (system.initial,qf), episodeLength)._2)
         }
       }
   }
 
 
-  final override def learnAndShow(l: Learning, episodes: Int): (V,Policy) = {
-    val q = l.runEpisodes(episodes,l.q0)
-    (q.vFunction(),q)
-  }
-}
-
-trait QLearningInMatrixEnvironment{
-  val rows: Int
-  val cols: Int
-  
-  type State = (Int,Int)
+  final override def learn(l: LearningProcess, episodes: Int, episodeLength: Int): Q = l.runEpisodes(episodes,episodeLength,l.q0)
 }
 

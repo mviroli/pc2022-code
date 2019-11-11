@@ -1,14 +1,14 @@
 package pc.rl
 
 import pc.utils.Stochastics
-
-import scala.annotation.tailrec
 import pc.utils.Stochastics._
 
 trait QRL[S,A] {
 
-  type R = Double
-  type P = Double
+  type R = Double // Reward
+  type P = Double // Probability
+
+  implicit val random = new scala.util.Random();
 
   // An Environment where one wants to learn
   trait Environment extends ((S, A) => (R, S)) {
@@ -17,12 +17,17 @@ trait QRL[S,A] {
     override def apply(s: S, a: A) = take(s, a)
   }
 
-  // A strategy to act
-  trait Policy extends (S=>A) {
-    def choice(s:S): A
+  // An MDP is the idealised implementation of an Environment
+  trait MDP extends Environment {
 
-    override def apply(s: S) = choice(s)
+    def transitions(s: S): Set[(A, P, R, S)]
+
+    override def take(s: S, a: A): (R, S) =
+      draw(cumulative(transitions(s).collect { case (`a`, p, r, s) => (p, (r, s)) }.toList))
   }
+
+  // A strategy to act
+  type Policy = (S=>A)
 
   // A system configuration, where "runs" can occur
   trait System {
@@ -33,33 +38,34 @@ trait QRL[S,A] {
     def run(p: Policy): Stream[(A,S)]
   }
 
+  // A VFunction
+  type VFunction = (S=>R)
+
   // an updatable, table-oriented QFunction, to optimise selection over certain actions
-  trait Q extends ((S,A)=>R) with Policy {
+  trait Q extends ((S,A)=>R) {
     def actions: Set[A]
     def update(s:S, a:A, v: R): Q
 
-    def value(s:S): R = actions.map{this(s,_)}.max
-    def choice(s:S): A = actions.maxBy{this(s,_)}
-    def vFunction(): V = value _
+    def bestPolicy: Policy = s => actions.maxBy{this(s,_)} // epsilon-greediness?
+    def explorativePolicy(f: P): Policy = {
+      case s if (Stochastics.drawFiltered(_<f)) => Stochastics.uniformDraw(actions)
+      case s => bestPolicy(s)
+    }
+    def vFunction: VFunction = s => actions.map{this(s,_)}.max
   }
 
-  // A VFunction
-  trait V extends (S=>R)
-
   // The Qlearning system, with parameters
-  trait Learning {
+  trait LearningProcess {
     val system: System
     val gamma: Double
     val alpha: Double
+    val epsilon: Double
     val q0: Q
 
     def updateQ(s: S, qf: Q): (S, Q)
-    def runEpisodes(episodes: Int, qf: Q): Q
+    def runEpisodes(episodes: Int, episodeLength: Int, qf: Q): Q
   }
 
-  // for visualization purposes, also show Function
-  def learnAndShow(l: Learning, episodes: Int): (V,Policy)
-
   // the top-level learning call, yielding the policy
-  def learn(l: Learning, episodes: Int): Policy = learnAndShow(l,episodes)._2
+  def learn(l: LearningProcess, episodes: Int, episodeLength: Int): Q
 }

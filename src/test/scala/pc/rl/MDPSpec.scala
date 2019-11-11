@@ -39,15 +39,15 @@ class RLSpec extends FlatSpec{
 
   "QRL" should "properly run an episode" in {
     var qf = TwoWaysMDP.rl.qfTW()
-    qf = rl.runEpisodes(100,qf)
+    qf = rl.runEpisodes(100,100,qf)
     assertResult(0.0)(qf(State(10),left))
     assertResult(10.0)(qf(State(-4),left))
-    assert( (-5 to 10).forall(i => qf.choice(State(i))==left))
+    assert( (-5 to 10).forall(i => qf.bestPolicy(State(i))==left))
   }
 
   "QRL" should "properly execute A run after learning" in {
     var qf = TwoWaysMDP.rl.qfTW()
-    qf = rl.runEpisodes(100,qf)
-    assertResult( List((left,State(-1)), (left,State(-2)), (left,State(-3)), (left,State(-4)), (left,State(-5))) )(rl.system.run(qf).toList)
+    qf = rl.runEpisodes(100,100,qf)
+    assertResult( List((left,State(-1)), (left,State(-2)), (left,State(-3)), (left,State(-4)), (left,State(-5))) )(rl.system.run(qf.bestPolicy).toList)
   }
 }

@@ -28,6 +28,7 @@ object TwoWaysMDP {
       system = QSystem(mdpTW(), State(0), terminalTW),
       gamma = 0.9,
       alpha = 0.5,
+      epsilon = 0.0,
       q0 = qfTW()
     )
   }
