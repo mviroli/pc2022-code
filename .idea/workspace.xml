@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae36cbfc-395f-4b4f-81fe-ac6580f8f0a6" name="Default Changelist" comment="lesson 02 ready">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/TryQLearningMatrix.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QLearningMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QLearningMatrix.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QRL.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QRL.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QRLImpl.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QRLImpl.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TryRL.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/TryRL.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/rl/MDPSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/rl/MDPSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QMatrix.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TryQLearningMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/TryQLearningMatrix.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +84,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="ScalaTest.ScalaTests in 'rl'">
+  <component name="RunManager" selected="Application.TryQLMatrix">
     <configuration name="DAPGossip" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.DAPGossip" />
       <module name="formalsystems" />
@@ -145,16 +141,6 @@
       <module name="formalsystems" />
       <option name="allowRunningInParallel" value="false" />
       <option name="testKind" value="Class" />
-      <option name="classBuf">
-        <list>
-          <option value="pc.rl.QFunctionSpec" />
-          <option value="pc.rl.MDPSpec" />
-          <option value="pc.rl.RLSpec" />
-          <option value="pc.rl.QFunctionSpec" />
-          <option value="pc.rl.RLSpec" />
-          <option value="pc.rl.MDPSpec" />
-        </list>
-      </option>
       <option name="envs">
         <map />
       </option>
@@ -163,7 +149,7 @@
       <option name="searchTest" value="Across module dependencies" />
       <option name="showProgressMessages" value="true" />
       <option name="testArgs" value="" />
-      <option name="testPackagePath" value="pc.rl" />
+      <option name="testClassPath" value="" />
       <option name="useSbt" value="false" />
       <option name="useUiWithSbt" value="false" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
@@ -175,13 +161,13 @@
       <item itemvalue="Application.DAPGossip" />
       <item itemvalue="Application.StochasticChannelExperiment" />
       <item itemvalue="Application.TryRL" />
-      <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
       <item itemvalue="Application.TryQLMatrix" />
+      <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
         <item itemvalue="Application.TryQLMatrix" />
+        <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
         <item itemvalue="Application.TryRL" />
         <item itemvalue="Application.StochasticChannelExperiment" />
         <item itemvalue="Application.DAPGossip" />

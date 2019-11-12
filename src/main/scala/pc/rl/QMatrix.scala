@@ -10,7 +10,7 @@ object QMatrix {
   import Action._
   type Action = Action.Value
 
-  case class RL(
+  case class Facade(
      width: Int,
      height: Int,
      initial: Node,
@@ -20,7 +20,7 @@ object QMatrix {
      gamma: Double,
      alpha: Double,
      epsilon: Double = 0.0,
-     v0: Double) extends QRLImpl[Node,Action] {
+     v0: Double) extends QRLImpl[Node,Action] { // use delegation instead of inheritance
 
     def qEnvironment(): Environment = new Environment {
       override def take(s: Node, a: Action): (R, Node) = {
