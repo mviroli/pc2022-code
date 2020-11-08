@@ -44,7 +44,8 @@ object MSet {
     override def matchIterator = iterator().map(a => (a,extract(MSet(a)).get))
     override def toString = s"{${asList.mkString("|")}}"
     override def map[B](f: (A) => B) = new MSetImpl[B](asList.map(f))
-    override def flatMap[B](f: (A) => MSet[B]) = new MSetImpl[B](asList.flatMap(x => f(x).asList))
+    override def flatMap[B](f: (A) => MSet[B]) =
+      new MSetImpl[B](asList.flatMap(x => f(x).asList))
     override def filter(f: (A) => Boolean) =
       new MSetImpl[A](asList.filter(f))
     override def collect[B](f: PartialFunction[A, B]) =

@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ae36cbfc-395f-4b4f-81fe-ac6580f8f0a6" name="Default Changelist" comment="lesson 02 ready">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/formalsystems-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/formalsystems-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/formalsystems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/formalsystems.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/QMatrix.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TryQLearningMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/TryQLearningMatrix.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/SystemMutualExclusion.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/SystemMutualExclusion.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/System.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/System.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/MSet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/utils/MSet.scala" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,9 +70,14 @@
   </component>
   <component name="ProjectId" id="1REpBzwj9kRadKsk4mzYzLvecxp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/scala/pc/rl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -72,21 +100,9 @@
       <recent name="$PROJECT_DIR$/src/main/scala/pc/examples" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.TryQLMatrix">
-    <configuration name="DAPGossip" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.DAPGossip" />
+  <component name="RunManager" selected="Application.TryMSet">
+    <configuration name="StochasticChannelExperiment" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.examples.StochasticChannelExperiment" />
       <module name="formalsystems" />
       <extension name="coverage">
         <pattern>
@@ -98,8 +114,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StochasticChannelExperiment" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.StochasticChannelExperiment" />
+    <configuration name="TryMSet" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.examples.TryMSet" />
       <module name="formalsystems" />
       <extension name="coverage">
         <pattern>
@@ -140,79 +156,33 @@
     <configuration name="ScalaTests in 'rl'" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="formalsystems" />
       <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
+      <option name="selectedOptions">
+        <set />
       </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
-      <option name="testClassPath" value="" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
+      <option name="testKind" value="Class" />
       <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DAPGossip" />
       <item itemvalue="Application.StochasticChannelExperiment" />
-      <item itemvalue="Application.TryRL" />
       <item itemvalue="Application.TryQLMatrix" />
+      <item itemvalue="Application.TryRL" />
       <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
+      <item itemvalue="Application.TryMSet" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TryMSet" />
         <item itemvalue="Application.TryQLMatrix" />
         <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
         <item itemvalue="Application.TryRL" />
         <item itemvalue="Application.StochasticChannelExperiment" />
-        <item itemvalue="Application.DAPGossip" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SbtLocalSettings">
-    <option name="availableProjects">
-      <map>
-        <entry>
-          <key>
-            <ExternalProjectPojo>
-              <option name="name" value="formalsystems" />
-              <option name="path" value="$PROJECT_DIR$" />
-            </ExternalProjectPojo>
-          </key>
-          <value>
-            <list>
-              <ExternalProjectPojo>
-                <option name="name" value="root [file:/media/dati/work/Lessons/2019-2020/pc/pc2019-code/]" />
-                <option name="path" value="$PROJECT_DIR$" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value="formalsystems-build" />
-                <option name="path" value="$PROJECT_DIR$/project" />
-              </ExternalProjectPojo>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="modificationStamps">
-      <map>
-        <entry key="$PROJECT_DIR$" value="4707725321850" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="2086764656" />
-        <entry key="$PROJECT_DIR$/project/build.properties" value="1085431145" />
-        <entry key="$PROJECT_DIR$/project/plugins.sbt" value="0" />
-      </map>
-    </option>
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$/../../../../../software/aguzzi-scafi" value="PREVIEW" />
-      </map>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -255,22 +225,39 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lesson 02 ready" />
     <option name="LAST_COMMIT_MESSAGE" value="lesson 02 ready" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1354" height="261" key="GridCell.Tab.0.bottom" timestamp="1604824971618">
+      <screen x="0" y="36" width="2560" height="1368" />
+    </state>
+    <state width="1354" height="261" key="GridCell.Tab.0.bottom/0.36.2560.1368@0.36.2560.1368" timestamp="1604824971618" />
+    <state width="1354" height="261" key="GridCell.Tab.0.center" timestamp="1604824971618">
+      <screen x="0" y="36" width="2560" height="1368" />
+    </state>
+    <state width="1354" height="261" key="GridCell.Tab.0.center/0.36.2560.1368@0.36.2560.1368" timestamp="1604824971618" />
+    <state width="1354" height="261" key="GridCell.Tab.0.left" timestamp="1604824971617">
+      <screen x="0" y="36" width="2560" height="1368" />
+    </state>
+    <state width="1354" height="261" key="GridCell.Tab.0.left/0.36.2560.1368@0.36.2560.1368" timestamp="1604824971617" />
+    <state width="1354" height="261" key="GridCell.Tab.0.right" timestamp="1604824971618">
+      <screen x="0" y="36" width="2560" height="1368" />
+    </state>
+    <state width="1354" height="261" key="GridCell.Tab.0.right/0.36.2560.1368@0.36.2560.1368" timestamp="1604824971618" />
   </component>
   <component name="masterDetails">
     <states>

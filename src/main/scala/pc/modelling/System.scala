@@ -1,6 +1,6 @@
 package pc.modelling
 
-// Basically the definition of s Rewrite System
+// Basically the definition of a Rewrite System
 trait CoreSystem[S] {
 
   def next(a: S): Set[S]

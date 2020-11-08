@@ -15,7 +15,8 @@ object SystemMutualExclusionion extends App {
     def moveOne(l:List[State])(from: State, to: State): Set[List[State]] =
       for (i <- (0 until size).toSet; if l(i)==from) yield l.updated(i,to)
     System.ofFunction[List[State]]{case l =>
-      moveOne(l)(N,T) ++ moveOne(l)(C,N) ++
+      moveOne(l)(N,T) ++
+        moveOne(l)(C,N) ++
         (if (l.contains(C)) Set() else moveOne(l)(T,C))
     }
   }
