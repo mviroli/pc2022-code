@@ -4,6 +4,7 @@ import it.unibo.scafi.incarnations.BasicAbstractIncarnation
 import it.unibo.scafi.simulation.s2.frontend.incarnation.scafi.bridge.SimulationInfo
 import it.unibo.scafi.simulation.s2.frontend.incarnation.scafi.configuration.ScafiProgramBuilder
 import it.unibo.scafi.simulation.s2.frontend.incarnation.scafi.world.ScafiWorldInitializer.Random
+import it.unibo.scafi.simulation.s2.frontend.view.{ViewSetting, WindowConfiguration}
 import lab.gui.patch.RadiusLikeSimulation
 
 object Incarnation extends BasicAbstractIncarnation
@@ -13,7 +14,8 @@ object Simulation extends App {
   val programClass = classOf[Main16]
   val nodes = 50
   val neighbourRange = 200
-  val (width, height) = (800, 600)
+  val (width, height) = (1024, 768)
+  ViewSetting.windowConfiguration = WindowConfiguration(width, height)
   ScafiProgramBuilder (
     Random(nodes, width, height),
     SimulationInfo(programClass),
