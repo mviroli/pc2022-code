@@ -22,13 +22,13 @@ object Simulation extends App {
     case (a,b,c) => (formatter(a),formatter(b),formatter(c))
     case (a,b,c,d) => (formatter(a),formatter(b),formatter(c),formatter(d))
     case l:Iterable[_] => l.map(formatter(_)).toString
-    case i: java.lang.Number if (i.doubleValue()>10000) => "Inf"
-    case i: java.lang.Number if (-i.doubleValue()>10000) => "-Inf"
+    case i: java.lang.Number if (i.doubleValue()>100000) => "Inf"
+    case i: java.lang.Number if (-i.doubleValue()>100000) => "-Inf"
     case i: java.lang.Double => f"${i.doubleValue()}%1.2f"
     case x => x.toString
   }
 
-  val programClass = classOf[Main16]
+  val programClass = classOf[Main11]
   val nodes = 100
   val neighbourRange = 200
   val (width, height) = (1920, 1080)
@@ -50,8 +50,7 @@ abstract class AggregateProgramSkeleton extends AggregateProgram with StandardSe
 }
 
 class Main extends AggregateProgramSkeleton {
-  def inc(x:Int):Int = x+1
-  override def main() = rep(init = 0)(fun = inc)
+  override def main() = rep(0){x => if(x>=1000) x else x+1}
 }
 
 class Main1 extends AggregateProgramSkeleton {
