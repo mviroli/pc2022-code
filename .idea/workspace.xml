@@ -12,19 +12,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e4b3763-5529-494c-a5d3-4f436b2838ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hydra.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/code-repo_3558.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/formalsystems-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/formalsystems-build.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/formalsystems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/formalsystems.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/PetriNet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/PetriNet.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/System.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/System.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/modelling/SystemChannelSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/SystemChannelSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/DAPGossip.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannelExperiment.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannelSimulation.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCAnalysis.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/DAP.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QMatrix.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QRL.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QRLImpl.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TryQLearningMatrix.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TryRL.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TwoWaysMDP.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/Grids.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/modelling/StochasticChannelExperimentSpec.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/rl/MDPSpec.scala" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31724137" />
   </component>
-  <component name="RunManager" selected="ScalaTest.SystemChannelSpec">
+  <component name="RunManager" selected="ScalaTest.ScalaTests in 'scala'">
     <configuration name="DAPGossip" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.DAPGossip" />
       <module name="formalsystems" />
@@ -126,9 +127,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
         <item itemvalue="ScalaTest.SystemChannelSpec" />
         <item itemvalue="Application.SystemChannel" />
-        <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
         <item itemvalue="Application.DAPGossip" />
       </list>
     </recent_temporary>
