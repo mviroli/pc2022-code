@@ -10,4 +10,4 @@ val scalachart = "com.github.wookietreiber" %% "scala-chart" % "latest.integrati
 
 lazy val root = (project in file (".")).
   settings(Seq(scalaVersion := "2.12.3")).
-  settings(name := "hello-scalatest", libraryDependencies ++= Seq (scalatest, scalacheck, scalachart))
+  settings(libraryDependencies ++= Seq (scalatest, scalacheck, scalachart))

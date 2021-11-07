@@ -19,12 +19,13 @@ trait System[S] extends CoreSystem[S] {
   def paths(s: S, depth: Int): Stream[List[S]] = depth match {
     case 0 => Stream()
     case 1 => Stream(List(s))
-    case _ => for (path <- paths(s, depth - 1); next <- next(path.last)) yield (path :+ next)
+    case _ => for (path <- paths(s, depth - 1);
+                   next <- next(path.last)) yield (path :+ next)
   }
 
-  // to be optimised
-  def completePathsUpTo(s: S, depth:Int): Stream[List[S]] =
-    Stream.iterate(1)(_+1) take (depth) flatMap (paths(s,_)) filter (complete(_))
+  // complete path with length '<= depth'
+  def completePathsUpToDepth(s: S, depth:Int): Stream[List[S]] =
+    Stream.iterate(1)(_+1) take (depth) flatMap (paths(s,_)) filter (complete(_))  // could be optimised
 
   // an infinite stream: might loop, use with care!
   def completePaths(s: S): Stream[List[S]] =

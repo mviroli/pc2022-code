@@ -23,7 +23,7 @@ class SystemChannelSpec extends FlatSpec{
     assertResult(
       List(List(IDLE, SEND, DONE), List(IDLE, SEND, SEND, DONE))
     )(
-      ch.completePathsUpTo(IDLE,4).toList
+      ch.completePathsUpToDepth(IDLE,4).toList
     )
 
     assert(ch.completePaths(IDLE).contains(
