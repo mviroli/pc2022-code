@@ -12,20 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e4b3763-5529-494c-a5d3-4f436b2838ca" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/DAPGossip.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannelExperiment.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannelSimulation.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCAnalysis.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/DAP.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QMatrix.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QRL.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/QRLImpl.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TryQLearningMatrix.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TryRL.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/TwoWaysMDP.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/Grids.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/modelling/StochasticChannelExperimentSpec.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/rl/MDPSpec.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,10 +87,6 @@
           <option value="pc.modelling.PNSpec" />
           <option value="pc.modelling.SystemChannelSpec" />
           <option value="pc.modelling.StochasticChannelSpec" />
-          <option value="pc.modelling.StochasticChannelExperimentSpec" />
-          <option value="pc.rl.QFunctionSpec" />
-          <option value="pc.rl.MDPSpec" />
-          <option value="pc.rl.RLSpec" />
         </list>
       </option>
       <option name="workingDirectory" value="$PROJECT_DIR$" />
