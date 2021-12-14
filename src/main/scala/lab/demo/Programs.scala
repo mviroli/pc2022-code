@@ -50,7 +50,7 @@ abstract class AggregateProgramSkeleton extends AggregateProgram with StandardSe
 }
 
 class Main extends AggregateProgramSkeleton {
-  override def main() = rep(0){x => if(x>=1000) x else x+1}
+  override def main() = 1
 }
 
 class Main1 extends AggregateProgramSkeleton {
