@@ -1,12 +1,13 @@
 package pc.utils
 
-import org.scalatest.FlatSpec
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers.*
 
-class StochasticsSpec extends FlatSpec{
+class StochasticsSpec extends AnyFunSuite{
 
   val choices = Set( 1.0->"a", 2.0->"b", 3.0->"C")
 
-  "Choices" should "correctly give cumulative list" in {
+  test("Choices should correctly give cumulative list") {
     assertResult(
       List((1.0,"a"), (3.0,"b"), (6.0,"C"))
     )(
@@ -14,7 +15,7 @@ class StochasticsSpec extends FlatSpec{
     )
   }
 
-  "Choices" should "correctly draw" in {
+  test("Choices should correctly draw") {
     val map = Stochastics.statistics(choices, 10000)
 
     assert(map("a")>1600)

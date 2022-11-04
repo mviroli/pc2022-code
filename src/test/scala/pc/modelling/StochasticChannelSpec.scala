@@ -1,17 +1,18 @@
 package pc.modelling;
 
-import org.scalatest.FlatSpec
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers.*
 
-class StochasticChannelSpec extends FlatSpec{
+class StochasticChannelSpec extends AnyFunSuite{
 
   import pc.examples.StochasticChannel, pc.examples.StochasticChannel.state._
 
   def ch = StochasticChannel.stocChannel
 
-  "Stochastic channel" should "correctly draw transitions" in {
-    assertResult(Set(1.0->SEND))(ch.transitions(IDLE))
-    assertResult(Set(100000->SEND, 200000->DONE, 100000->FAIL))(ch.transitions(SEND))
-    assertResult(Set(100000->IDLE))(ch.transitions(FAIL))
-    assertResult(Set(1->DONE))(ch.transitions(DONE))
+  test("Stochastic channel should correctly draw transitions") {
+    ch.transitions(IDLE) shouldBe Set(1.0->SEND)
+    ch.transitions(SEND) shouldBe Set(100000->SEND, 200000->DONE, 100000->FAIL)
+    ch.transitions(FAIL) shouldBe Set(100000->IDLE)
+    ch.transitions(DONE) shouldBe Set(1->DONE)
   }
 }

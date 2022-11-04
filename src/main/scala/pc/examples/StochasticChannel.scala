@@ -19,5 +19,5 @@ object StochasticChannel extends App {
   )
 
   // example run
-  state.values.foreach(s => println(s,stocChannel.transitions(s)))
+  state.values.foreach(s => println(s"$s,${stocChannel.transitions(s)}"))
 }

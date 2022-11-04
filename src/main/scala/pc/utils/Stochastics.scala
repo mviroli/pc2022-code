@@ -4,7 +4,7 @@ import scala.util.Random
 
 object Stochastics extends App {
 
-  implicit lazy val random = new Random()
+  implicit lazy val random: Random = new Random()
 
   // (p1,a1),...,(pn,an) --> (p1,a1),(p1+p2,a2),..,(p1+..+pn,an)
   def cumulative[A](l: List[(Double,A)]): List[(Double,A)] =
@@ -30,5 +30,5 @@ object Stochastics extends App {
                    (implicit rnd: Random = random): Map[A,Int] =
     (1 to size).map(i => Stochastics.draw(cumulative(choices.toList))(random))
                 .groupBy(identity)
-                .mapValues(_.size)
+                .view.mapValues(_.size).toMap
 }

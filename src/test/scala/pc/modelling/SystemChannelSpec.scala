@@ -1,23 +1,24 @@
 package pc.modelling
 
-import org.scalatest.FlatSpec
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers.*
 
-class SystemChannelSpec extends FlatSpec{
+class SystemChannelSpec extends AnyFunSuite{
   import pc.examples.SystemChannel, pc.examples.SystemChannel.state._
 
-  val ch = SystemChannel.channel();
+  val ch = SystemChannel.channel;
 
-  "System Channel" should "properly identify normal forms" in {
+  test("System Channel should properly identify normal forms"){
     assert(!ch.normalForm(IDLE))
     assert(ch.normalForm(DONE))
   }
 
-  "System Channel" should "properly draw next states" in {
+  test("System Channel should properly draw next states"){
     assertResult(Set(SEND))(ch.next(IDLE));
     assertResult(Set(SEND, DONE, FAIL))(ch.next(SEND));
   }
 
-  "System Channel" should "properly generate paths" in {
+  test("System Channel should properly generate paths"){
     assert(ch.paths(IDLE,3).contains(List(IDLE, SEND, SEND)));
 
     assertResult(

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="formalsystems,pc-mod2-code_4224" />
+    <profile name="sbt 1" modules="pc-mod2-code_2451,pc2-code" />
   </component>
 </project>

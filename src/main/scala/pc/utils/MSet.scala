@@ -37,11 +37,11 @@ object MSet {
     override def union(m: MSet[A]) = new MSetImpl[A](asList ++ m.asList)
     override def diff(m: MSet[A]) = new MSetImpl[A](asList diff m.asList)
     override def disjoined(m: MSet[A]) = (asList intersect m.asList).isEmpty
-    override def size() = asList.size
+    override def size = asList.size
     override def matches(m: MSet[A]) = extract(m).isDefined
     override def extract(m: MSet[A]) = Some(this diff m) filter (_.size == size - m.size)
-    override def iterator() = asList.distinct.iterator
-    override def matchIterator = iterator().map(a => (a,extract(MSet(a)).get))
+    override def iterator = asList.distinct.iterator
+    override def matchIterator = iterator.map(a => (a,extract(MSet(a)).get))
     override def toString = s"{${asList.mkString("|")}}"
     override def map[B](f: (A) => B) = new MSetImpl[B](asList.map(f))
     override def flatMap[B](f: (A) => MSet[B]) =

@@ -11,7 +11,7 @@ object SystemChannel extends App {
   import state._
 
   // System specification
-  def channel(): System[State] = System.ofTransitions(
+  def channel: System[State] = System.ofTransitions(
     IDLE->SEND,
     SEND->SEND,
     SEND->DONE,
