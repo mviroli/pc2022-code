@@ -2,13 +2,14 @@ package pc.examples
 
 import pc.modelling.System
 
-object SystemChannel extends App {
+object SystemChannel:
+  // enabling analysis
+  export pc.modelling.SystemAnalysis.*
+
   // Specification of my data-type for states
-  object state extends Enumeration {
-    val IDLE,SEND,DONE,FAIL = Value
-  }
-  type State = state.Value
-  import state._
+  enum State:
+    case IDLE,SEND,DONE,FAIL
+  export State.*
 
   // System specification
   def channel: System[State] = System.ofTransitions(
@@ -19,6 +20,8 @@ object SystemChannel extends App {
     FAIL->IDLE //,DONE->DONE
   )
 
+@main def mainSystemChannel() =
+  import SystemChannel.*
   // Analysis, by querying
   println(channel.normalForm(IDLE))
   println(channel.normalForm(DONE))
@@ -29,4 +32,3 @@ object SystemChannel extends App {
   println("P3  "+channel.paths(IDLE,3).toList)
   println("P4  "+channel.paths(IDLE,4).toList)
   println("CMP:\n"+channel.completePaths(IDLE).take(100).toList.mkString("\n"))
-}

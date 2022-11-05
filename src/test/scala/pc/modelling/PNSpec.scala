@@ -5,7 +5,9 @@ import org.scalatest.matchers.should.Matchers.*
 
 class PNSpec extends AnyFunSuite {
 
-  import pc.examples.PNMutualExclusion, pc.examples.PNMutualExclusion.place._
+  import pc.examples.PNMutualExclusion
+  import pc.examples.PNMutualExclusion.place.*
+  import SystemAnalysis.*
   import pc.utils.MSet
 
   val pnME = PNMutualExclusion.mutualExclusionSystem()

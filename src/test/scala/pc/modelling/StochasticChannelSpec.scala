@@ -5,7 +5,8 @@ import org.scalatest.matchers.should.Matchers.*
 
 class StochasticChannelSpec extends AnyFunSuite{
 
-  import pc.examples.StochasticChannel, pc.examples.StochasticChannel.state._
+  import pc.examples.StochasticChannel
+  import pc.examples.StochasticChannel.state.*
 
   def ch = StochasticChannel.stocChannel
 

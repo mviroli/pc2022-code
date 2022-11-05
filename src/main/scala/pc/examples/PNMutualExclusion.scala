@@ -1,7 +1,8 @@
 package pc.examples
 
 import pc.modelling.PetriNet
-import pc.modelling.PetriNet._
+import pc.modelling.PetriNet.*
+import pc.modelling.SystemAnalysis.*
 import pc.utils.MSet
 
 object PNMutualExclusion extends App {
