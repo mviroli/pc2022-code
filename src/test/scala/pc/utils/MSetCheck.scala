@@ -48,12 +48,4 @@ object MSetCheck extends Properties("MSet") {
   property ("has iterator that does not miss values in MSet") = forAll { (list: List[Int]) =>
     val elements = MSet.ofList(list).iterator.toList; list forall (elements contains _)
   }
-
-  property ("has matchIterator that gives precisely all elements") = forAll { (mset: MSet[Int]) =>
-    mset.matchIterator.map(_._1).toList == mset.iterator.toList
-  }
-
-  property ("has iterate that correctly gives remainders") = forAll { (mset: MSet[Int]) =>
-    mset.matchIterator forall {case (a,m) => MSet(a).union(m) == mset}
-  }
 }

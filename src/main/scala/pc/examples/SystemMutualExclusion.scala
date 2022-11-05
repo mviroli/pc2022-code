@@ -3,11 +3,12 @@ package pc.examples
 import pc.modelling.System
 
 object SystemMutualExclusion:
-  export pc.modelling.SystemAnalysis.*
 
   enum State:
     case N,T,C
+
   export State.*
+  export pc.modelling.SystemAnalysis.*
 
   type States = List[State]
 

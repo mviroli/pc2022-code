@@ -13,6 +13,5 @@ object TryMSet extends App {
   println(m1.asList)
   println(m1.asMap)
   println(m1.iterator.toList)
-  println(m1.matchIterator.toList)
   println(m1.extract(MSet(50,10)))
 }

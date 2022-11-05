@@ -2,31 +2,25 @@ package pc.modelling
 
 import pc.utils.MSet
 
-object PetriNet {
+object PetriNet:
   // pre-conditions, effects, inhibition
-  type PetriNet[P] = Set[(MSet[P],MSet[P],MSet[P])]
+  case class Trn[P](in: MSet[P], out: MSet[P], inh: MSet[P])
+  type PetriNet[P] = Set[Trn[P]]
+  type Marking[P] = MSet[P]
 
   // factory of A Petri Net
-  def apply[P](transitions: (MSet[P],MSet[P],MSet[P])*): PetriNet[P] =
-    transitions.toSet
-
-  def toPartialFunction[P](pn: PetriNet[P]): PartialFunction[MSet[P],Set[MSet[P]]] =
-    {case m => for ((cond,eff,inh)<-pn;
-                    if (m disjoined inh);
-                    out <- m extract cond) yield out union eff }
+  def apply[P](transitions: Trn[P]*): PetriNet[P] = transitions.toSet
 
   // factory of A System
-  def toSystem[P](pn: PetriNet[P]): System[MSet[P]] =
-    System.ofFunction( toPartialFunction(pn))
+  def toSystem[P](pn: PetriNet[P]): System[Marking[P]] = m =>
+    for
+      Trn(cond, eff, inh) <- pn
+      if m disjoined inh
+      out <- m extract cond
+    yield out union eff
 
-  // Syntactic sugar to write transitions as:  MSet(a,b,c) ~~> MSet(d,e)
-  implicit final class LeftTransitionRelation[P](private val self: MSet[P]){
-    def ~~> (y: MSet[P]): Tuple3[MSet[P], MSet[P], MSet[P]] = Tuple3(self, y, MSet[P]())
-  }
-  // Syntactic sugar to write transitions as:  MSet(a,b,c) ~~> MSet(d,e) ^^^ MSet(f)
-  implicit final class RightTransitionRelation[P](
-    private val self: Tuple3[MSet[P],MSet[P],MSet[P]]
-  ){
-    def ^^^ (z: MSet[P]): Tuple3[MSet[P], MSet[P],MSet[P]] = Tuple3(self._1, self._2, z)
-  }
-}
+  // fancy syntax
+  extension [P](self: MSet[P])
+    def ~~> (y: MSet[P]) = Trn(self, y, MSet[P]())
+  extension [P](self: Trn[P])
+    def ^^^ (z: MSet[P]) = self.copy(inh = z)
