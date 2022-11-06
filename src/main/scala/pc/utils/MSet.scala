@@ -22,9 +22,10 @@ object MSet:
   // Hidden reference implementation
   private case class MSetImpl[A](asMap: Map[A,Int]) extends MSet[A]:
     def this(list: List[A]) =
-      this(list.groupBy(a=>a).map{case (a,n) => (a,n.size)})
+      this(list.groupBy(a=>a).map{case (a,n) => (a, n.size)})
+    override val asList =
+      asMap.toList.flatMap{case (a,n) => List.fill(n)(a)}
 
-    override val asList = asMap.toList.flatMap{case (a,n) => List.fill(n)(a)}
     override def apply(v1: A) = asMap.getOrElse(v1,0)
     override def union(m: MSet[A]) = new MSetImpl[A](asList ++ m.asList)
     override def diff(m: MSet[A]) = new MSetImpl[A](asList diff m.asList)

@@ -16,7 +16,7 @@ object SystemMutualExclusion:
   private def move(l: States)(from: State, to: State): Set[States] =
     (0 until l.size).toSet collect { case i if l(i) == from => l.updated(i, to) }
 
-  // System specification
+  // System specification, try to capture the abstraction a bit
   def mutualExclusion: System[States] = l =>
     move(l)(N,T) ++ move(l)(C,N) ++ (if (l.contains(C)) Set() else move(l)(T,C))
 

@@ -5,12 +5,7 @@ import org.scalatest.matchers.should.Matchers.*
 
 class PNSpec extends AnyFunSuite {
 
-  import pc.examples.PNMutualExclusion
-  import pc.examples.PNMutualExclusion.place.*
-  import SystemAnalysis.*
-  import pc.utils.MSet
-
-  val pnME = PNMutualExclusion.mutualExclusionSystem()
+  import pc.examples.PNMutualExclusion.*
 
   test("PN for mutual exclusion should properly generate 7-length paths"){
 

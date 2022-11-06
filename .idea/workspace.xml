@@ -14,14 +14,23 @@
     <list default="true" id="be6a05cf-828c-439b-bff8-9ca1199192f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/PNMutualExclusion.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/PNMutualExclusion.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/SystemChannel.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/SystemChannel.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannel.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannelSimulation.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticMutualExclusion.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/SystemMutualExclusion.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/SystemMutualExclusion.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/TryMSet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/TryMSet.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMC.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/CTMCSimulation.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/PetriNet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/PetriNet.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/SPN.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/modelling/System.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/modelling/System.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/MSet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/utils/MSet.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/modelling/SystemChannelSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/SystemChannelSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/Stochastics.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/Time.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/modelling/PNSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/modelling/PNSpec.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/modelling/StochasticChannelSpec.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/pc/utils/MSetCheck.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/pc/utils/MSetCheck.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/pc/utils/StochasticsSpec.scala" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +66,20 @@
     &quot;last_opened_file_path&quot;: &quot;/media/dati/work/Lessons/2022-2023/pc/pc-mod2-code&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.mainPNMutualExclusion">
+  <component name="RunManager" selected="ScalaTest.ScalaTests in 'scala'">
+    <configuration name="MSetCheck" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.utils.MSetCheck" />
+      <module name="pc2-code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pc.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TryMSet" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.TryMSet" />
       <module name="pc2-code" />
@@ -73,19 +95,6 @@
     </configuration>
     <configuration name="mainPNMutualExclusion" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.mainPNMutualExclusion" />
-      <module name="pc2-code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pc.examples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mainSystemChannel" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.mainSystemChannel" />
       <module name="pc2-code" />
       <extension name="coverage">
         <pattern>
@@ -134,10 +143,8 @@
       <option name="classBuf">
         <list>
           <option value="pc.utils.MSetSpec" />
-          <option value="pc.utils.StochasticsSpec" />
           <option value="pc.modelling.PNSpec" />
           <option value="pc.modelling.SystemChannelSpec" />
-          <option value="pc.modelling.StochasticChannelSpec" />
         </list>
       </option>
       <method v="2">
@@ -146,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.mainPNMutualExclusion" />
         <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
+        <item itemvalue="Application.mainPNMutualExclusion" />
         <item itemvalue="Application.TryMSet" />
+        <item itemvalue="Application.MSetCheck" />
         <item itemvalue="Application.mainSystemMutualExclusion" />
-        <item itemvalue="Application.mainSystemChannel" />
       </list>
     </recent_temporary>
   </component>
