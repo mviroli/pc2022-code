@@ -62,6 +62,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StochasticChannel" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.examples.StochasticChannel" />
+      <module name="pc2-code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pc.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TryMSet" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.TryMSet" />
       <module name="pc2-code" />
@@ -77,19 +90,6 @@
     </configuration>
     <configuration name="mainPNMutualExclusion" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.mainPNMutualExclusion" />
-      <module name="pc2-code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pc.examples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mainSystemMutualExclusion" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.mainSystemMutualExclusion" />
       <module name="pc2-code" />
       <extension name="coverage">
         <pattern>
@@ -125,8 +125,10 @@
       <option name="classBuf">
         <list>
           <option value="pc.utils.MSetSpec" />
+          <option value="pc.utils.StochasticsSpec" />
           <option value="pc.modelling.PNSpec" />
           <option value="pc.modelling.SystemChannelSpec" />
+          <option value="pc.modelling.StochasticChannelSpec" />
         </list>
       </option>
       <method v="2">
@@ -136,10 +138,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
+        <item itemvalue="Application.StochasticChannel" />
         <item itemvalue="Application.mainPNMutualExclusion" />
         <item itemvalue="Application.TryMSet" />
         <item itemvalue="Application.MSetCheck" />
-        <item itemvalue="Application.mainSystemMutualExclusion" />
       </list>
     </recent_temporary>
   </component>
