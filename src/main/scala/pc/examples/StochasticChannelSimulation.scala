@@ -1,20 +1,12 @@
 package pc.examples
 
 import pc.utils.Time
-import pc.modelling.CTMCSimulation
 import java.util.Random
+import pc.examples.StochasticChannel.*
 
-object StochasticChannelSimulation extends App {
-
-  import pc.examples.StochasticChannel.state._
-
-  val channel = StochasticChannel.stocChannel
-
-  val channelAnalysis = CTMCSimulation(channel)
-  Time.timed{
-    println(channelAnalysis.newSimulationTrace(IDLE, new Random)
+@main def mainStochasticChannelSimulation =
+  Time.timed(
+    println(stocChannel.newSimulationTrace(IDLE, new Random)
                            .take(10)
                            .toList
-                           .mkString("\n"))
-  }
-}
+                           .mkString("\n")))

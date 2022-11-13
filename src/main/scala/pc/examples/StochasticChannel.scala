@@ -2,12 +2,12 @@ package pc.examples
 
 import pc.modelling.CTMC
 
-object StochasticChannel extends App {
-  object state extends Enumeration {
-    val IDLE,SEND,DONE,FAIL = Value
-  }
-  import state._
-  type State = state.Value
+object StochasticChannel:
+  enum State:
+    case IDLE, SEND, DONE, FAIL;
+
+  export State.*
+  export pc.modelling.CTMCSimulation.*
 
   def stocChannel: CTMC[State] = CTMC.ofTransitions(
     (IDLE,1.0,SEND),
@@ -18,6 +18,6 @@ object StochasticChannel extends App {
     (DONE,1.0,DONE)
   )
 
-  // example run
-  state.values.foreach(s => println(s"$s,${stocChannel.transitions(s)}"))
-}
+@main def mainStochasticChannel() =  // example run
+  import StochasticChannel.*
+  State.values.foreach(s => println(s"$s,${stocChannel.transitions(s)}"))
