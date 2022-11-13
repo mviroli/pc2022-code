@@ -5,17 +5,21 @@ import pc.utils.Stochastics
 
 object CTMCSimulation:
 
-  type Trace[A] = LazyList[(Double,A)]
+  case class Event[A](time: Double, state: A)
+  type Trace[A] = LazyList[Event[A]]
+
+  export CTMC.*
 
   extension [S](self: CTMC[S])
     def newSimulationTrace(s0: S, rnd: Random): Trace[S] =
-      LazyList.iterate((0.0, s0)) { case (t, s) =>
+      LazyList.iterate(Event(0.0, s0)) { case Event(t, s) =>
         if self.transitions(s).isEmpty
         then
-          (t, s)
+          Event(t, s)
         else
-          val next = Stochastics.cumulative(self.transitions(s).toList)
+          val choices = self.transitions(s) map (t => (t.rate, t.state))
+          val next = Stochastics.cumulative(choices.toList)
           val sumR = next.last._1
           val choice = Stochastics.draw(next)(using rnd)
-          (t + Math.log(1 / rnd.nextDouble()) / sumR, choice)
+          Event(t + Math.log(1 / rnd.nextDouble()) / sumR, choice)
       }

@@ -10,6 +10,7 @@ object SystemChannel:
 
   // enabling analysis through this object
   export pc.modelling.SystemAnalysis.*
+  export pc.modelling.CTMC.*
   export State.*
 
   // System specification

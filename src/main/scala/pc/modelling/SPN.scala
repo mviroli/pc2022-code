@@ -1,21 +1,26 @@
 package pc.modelling
 
 import pc.utils.MSet
+import pc.modelling.CTMC.*
 
 object SPN:
 
   // pre-conditions, rate, effects, inhibition
-  type SPN[P] = Set[(MSet[P],MSet[P]=>Double,MSet[P],MSet[P])]
+  case class Trn[P](
+    cond: MSet[P],
+    rate: MSet[P]=>Double,
+    eff: MSet[P],
+    inh: MSet[P])
 
-  def toPartialFunction[P](spn: SPN[P]): PartialFunction[MSet[P],Set[(Double,MSet[P])]] =
+  type SPN[P] = Set[Trn[P]]
+
+  def toCTMC[P](spn: SPN[P]): CTMC[MSet[P]] =
     m =>
       for
-        (cond,rate,eff,inh) <- spn
+        Trn(cond, rate, eff, inh) <- spn
         if m disjoined inh
         r = rate(m)
         out <- m extract cond
-      yield (r,out union eff)
+      yield Action(r, out union eff)
 
-  def toCTMC[P](spn: SPN[P]): CTMC[MSet[P]] = CTMC.ofFunction(toPartialFunction(spn))
-
-  def apply[P](transitions: (MSet[P],MSet[P]=>Double,MSet[P],MSet[P])*): SPN[P] = transitions.toSet
+  def apply[P](transitions: Trn[P]*): SPN[P] = transitions.toSet

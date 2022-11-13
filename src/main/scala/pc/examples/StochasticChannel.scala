@@ -10,12 +10,12 @@ object StochasticChannel:
   export pc.modelling.CTMCSimulation.*
 
   def stocChannel: CTMC[State] = CTMC.ofTransitions(
-    (IDLE,1.0,SEND),
-    (SEND,100000.0,SEND),
-    (SEND,200000.0,DONE),
-    (SEND,100000.0,FAIL),
-    (FAIL,100000.0,IDLE),
-    (DONE,1.0,DONE)
+    Transition(IDLE,1.0 --> SEND),
+    Transition(SEND,100000.0 --> SEND),
+    Transition(SEND,200000.0 --> DONE),
+    Transition(SEND,100000.0 --> FAIL),
+    Transition(FAIL,100000.0 --> IDLE),
+    Transition(DONE,1.0 --> DONE)
   )
 
 @main def mainStochasticChannel() =  // example run

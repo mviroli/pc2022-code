@@ -3,14 +3,21 @@ package pc.modelling
 import scala.util.Random
 
 trait CTMC[S]:
-  def transitions(a: S): Set[(Double,S)] // rate + state
+  import CTMC.Action
+  def transitions(a: S): Set[Action[S]] // rate + state
 
 object CTMC:
 
-  def ofFunction[S](f: PartialFunction[S,Set[(Double,S)]]): CTMC[S] =
-    s => f.applyOrElse(s, (x: S)=>Set[(Double,S)]())
+  case class Action[S](rate: Double, state: S)
+  extension [S](rate: Double)
+    def -->(state: S) = Action(rate, state)
 
-  def ofRelation[S](rel: Set[(S,Double,S)]): CTMC[S] =
-    ofFunction(s => rel filter (_._1 == s) map (t=>(t._2,t._3)))
+  case class Transition[S](state: S, action: Action[S])
 
-  def ofTransitions[S](rel: (S,Double,S)*): CTMC[S] = ofRelation(rel.toSet)
+  def ofFunction[S](f: PartialFunction[S, Set[Action[S]]]): CTMC[S] =
+    s => f.applyOrElse(s, (x: S) => Set[Action[S]]())
+
+  def ofRelation[S](rel: Set[Transition[S]]): CTMC[S] =
+    ofFunction(s => rel filter (_.state == s) map (_.action))
+
+  def ofTransitions[S](rel: Transition[S]*): CTMC[S] = ofRelation(rel.toSet)
