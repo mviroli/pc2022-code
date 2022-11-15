@@ -11,6 +11,10 @@ trait MSet[A] extends (A => Int):
   def asList: List[A]
   def asMap: Map[A,Int]
   def iterator: Iterator[A]
+  def map[B](f: (A) => B): MSet[B]
+  def flatMap[B](f: (A) => MSet[B]): MSet[B]
+  def filter(f: (A) => Boolean): MSet[A]
+  def collect[B](f: PartialFunction[A, B]): MSet[B]
 
 // Functional-style helpers/implementation
 object MSet:
@@ -35,4 +39,11 @@ object MSet:
     override def extract(m: MSet[A]) =
       Some(this diff m) filter (_.size == size - m.size)
     override def iterator = asMap.keysIterator
+    override def map[B](f: (A) => B) = new MSetImpl[B](asList.map(f))
+    override def flatMap[B](f: (A) => MSet[B]) =
+      new MSetImpl[B](asList.flatMap(x => f(x).asList))
+    override def filter(f: (A) => Boolean) =
+      new MSetImpl[A](asList.filter(f))
+    override def collect[B](f: PartialFunction[A, B]) =
+      new MSetImpl[B](asList.collect(f))
     override def toString = s"{${asList.mkString("|")}}"

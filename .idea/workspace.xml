@@ -13,6 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be6a05cf-828c-439b-bff8-9ca1199192f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/MSet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/utils/MSet.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +49,22 @@
     &quot;last_opened_file_path&quot;: &quot;/media/dati/work/Lessons/2022-2023/pc/pc-mod2-code&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.mainStochasticChannelSimulation">
-    <configuration name="StochasticChannelSimulation" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.StochasticChannelSimulation" />
+  <component name="RunManager" selected="Application.mainDAPGossip">
+    <configuration name="DAPGossip" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.examples.DAPGossip" />
+      <module name="pc2-code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pc.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mainDAPGossip" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.examples.mainDAPGossip" />
       <module name="pc2-code" />
       <extension name="coverage">
         <pattern>
@@ -122,26 +136,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StochasticsSpec" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <module name="pc2-code" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="testKind" value="Class" />
-      <option name="testClassPath" value="pc.utils.StochasticsSpec" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.mainDAPGossip" />
+        <item itemvalue="Application.DAPGossip" />
         <item itemvalue="Application.mainStochasticChannelSimulation" />
         <item itemvalue="Application.mainStochasticChannel" />
         <item itemvalue="ScalaTest.ScalaTests in 'scala'" />
-        <item itemvalue="Application.StochasticChannelSimulation" />
-        <item itemvalue="ScalaTest.StochasticsSpec" />
       </list>
     </recent_temporary>
   </component>
