@@ -12,7 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be6a05cf-828c-439b-bff8-9ca1199192f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/pc2-code-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/pc2-code-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/pc2-code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/pc2-code.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannel.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/examples/StochasticChannel.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +52,22 @@
     &quot;last_opened_file_path&quot;: &quot;/media/dati/work/Lessons/2022-2023/pc/pc-mod2-code&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.mainDAPGossip">
-    <configuration name="DAPGossip" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.DAPGossip" />
+  <component name="RunManager" selected="Application.SimpleExponentialExperiment">
+    <configuration name="SimpleExponentialExperiment" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.examples.SimpleExponentialExperiment" />
+      <module name="pc2-code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pc.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StochasticChannelExperiment" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.examples.StochasticChannelExperiment" />
       <module name="pc2-code" />
       <extension name="coverage">
         <pattern>
@@ -88,21 +105,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mainStochasticChannel" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.mainStochasticChannel" />
-      <module name="pc2-code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pc.examples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="mainStochasticChannelSimulation" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.mainStochasticChannelSimulation" />
+    <configuration name="mainSimpleAutomaton" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.examples.mainSimpleAutomaton" />
       <module name="pc2-code" />
       <extension name="coverage">
         <pattern>
@@ -129,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SimpleExponentialExperiment" />
+        <item itemvalue="Application.mainSimpleAutomaton" />
+        <item itemvalue="Application.StochasticChannelExperiment" />
         <item itemvalue="Application.mainDAPGossip" />
         <item itemvalue="Application.StochasticMutualExclusion" />
-        <item itemvalue="Application.DAPGossip" />
-        <item itemvalue="Application.mainStochasticChannelSimulation" />
-        <item itemvalue="Application.mainStochasticChannel" />
       </list>
     </recent_temporary>
   </component>

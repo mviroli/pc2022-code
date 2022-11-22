@@ -4,7 +4,7 @@ import pc.modelling.CTMC
 
 object StochasticChannel:
   enum State:
-    case IDLE, SEND, DONE, FAIL;
+    case IDLE, SEND, DONE, FAIL
 
   export State.*
   export pc.modelling.CTMCSimulation.*
