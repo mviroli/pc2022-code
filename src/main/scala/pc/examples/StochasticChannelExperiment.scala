@@ -14,10 +14,10 @@ object StochasticChannelExperiment extends App with de.sciss.chart.module.Charti
     for
       t <- 0.1 to 10.0 by 0.1
       p = stocChannel.experiment(
-      runs = 19000,
-      prop = stocChannel.eventually(_ == DONE),
-      rnd = new Random(),
-      s0 = IDLE,
+        runs = 26000,
+        prop = stocChannel.eventually(_ == DONE),
+        rnd = new Random(),
+        s0 = IDLE,
       timeBound = t.toDouble)
     yield (t, p)
 
