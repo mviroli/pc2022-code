@@ -13,7 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be6a05cf-828c-439b-bff8-9ca1199192f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/examples/TryQLearningMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/examples/TryQLearningMatrix.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/model/QMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/model/QMatrix.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Package Object" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,28 +49,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/media/dati/work/Lessons/2022-2023/pc/pc-scafi/build.sbt&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/media/dati/work/Lessons/2022-2023/pc/pc-mod2-code/src/main/scala/pc/rl/lab"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/scala/pc/rl/lab" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.TryQMatrix">
-    <configuration name="StochasticChannelExperiment" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="pc.examples.StochasticChannelExperiment" />
-      <module name="pc2-code" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pc.examples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TryQMatrix" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.rl.examples.TryQMatrix" />
       <module name="pc2-code" />
@@ -96,6 +95,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="pc.rl.examples.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pc.rl.lab.TryQMatrix" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="pc.rl.lab.TryQMatrix" />
+      <module name="pc2-code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pc.rl.lab.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,7 +149,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.StochasticChannelExperiment" />
+      <item itemvalue="Application.pc.rl.lab.TryQMatrix" />
       <item itemvalue="Application.TryRL" />
       <item itemvalue="Application.TwoWaysMDP" />
       <item itemvalue="Application.TryQMatrix" />
@@ -146,10 +158,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TryQMatrix" />
+        <item itemvalue="Application.pc.rl.lab.TryQMatrix" />
         <item itemvalue="Application.TryRL" />
         <item itemvalue="Application.TwoWaysMDP" />
         <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
-        <item itemvalue="Application.StochasticChannelExperiment" />
       </list>
     </recent_temporary>
   </component>
