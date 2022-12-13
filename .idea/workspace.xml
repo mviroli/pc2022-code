@@ -12,9 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be6a05cf-828c-439b-bff8-9ca1199192f0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/utils/Stochastics.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/utils/Stochastics.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/pc/rl/examples/TryQLearningMatrix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/pc/rl/examples/TryQLearningMatrix.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
     &quot;last_opened_file_path&quot;: &quot;/media/dati/work/Lessons/2022-2023/pc/pc-scafi/build.sbt&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.TryRL">
+  <component name="RunManager" selected="Application.TryQMatrix">
     <configuration name="StochasticChannelExperiment" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pc.examples.StochasticChannelExperiment" />
       <module name="pc2-code" />
@@ -146,10 +145,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TryQMatrix" />
         <item itemvalue="Application.TryRL" />
         <item itemvalue="Application.TwoWaysMDP" />
         <item itemvalue="ScalaTest.ScalaTests in 'rl'" />
-        <item itemvalue="Application.TryQMatrix" />
         <item itemvalue="Application.StochasticChannelExperiment" />
       </list>
     </recent_temporary>
